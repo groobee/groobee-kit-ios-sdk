@@ -1,0 +1,16 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name GroobeeKit
+import Foundation
+import Swift
+import _Concurrency
+@_hasMissingDesignatedInitializers public class TestClass {
+  public static var sharedInstance: GroobeeKit.TestClass
+  public func testGroobeeKit()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class TestClassTwo : ObjectiveC.NSObject {
+  @objc public static func testObjcGroobeeKit()
+  @objc override dynamic public init()
+  @objc deinit
+}
