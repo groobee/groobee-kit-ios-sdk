@@ -120,16 +120,17 @@ extension GroobeeServiceManager {
   @objc deinit
   @objc override dynamic public init()
 }
-@_hasMissingDesignatedInitializers @available(iOS 11.0, *)
-public class GroobeeKitLifeCycle {
+@_inheritsConvenienceInitializers @available(iOS 11.0, *)
+@objc public class GroobeeKitLifeCycle : ObjectiveC.NSObject {
   public static var runtimeConfigProvider: GroobeeKit.RuntimeConfigProvider
-  public static func sceneDidDisconnect()
-  public static func sceneDidBecomeActive()
-  public static func sceneWillResignActive()
-  public static func sceneWillEnterForeground()
-  public static func sceneDidEnterBackground()
+  @objc public static func sceneDidDisconnect()
+  @objc public static func sceneDidBecomeActive()
+  @objc public static func sceneWillResignActive()
+  @objc public static func sceneWillEnterForeground()
+  @objc public static func sceneDidEnterBackground()
   public static func setDirectMessageOpened(_ isDirectMessageOpened: Swift.Bool)
   public static func getStateLifeCycle() -> GroobeeKit.StateLifeCycle
+  @objc override dynamic public init()
   @objc deinit
 }
 public struct MessageText : Swift.Codable {

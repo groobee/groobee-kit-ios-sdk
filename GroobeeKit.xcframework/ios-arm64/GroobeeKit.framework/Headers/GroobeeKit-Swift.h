@@ -296,6 +296,17 @@ SWIFT_CLASS("_TtCC10GroobeeKit13GroobeeConfig20GroobeeConfigBuilder")
 - (GroobeeConfig * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+SWIFT_CLASS("_TtC10GroobeeKit19GroobeeKitLifeCycle") SWIFT_AVAILABILITY(ios,introduced=11.0)
+@interface GroobeeKitLifeCycle : NSObject
++ (void)sceneDidDisconnect;
++ (void)sceneDidBecomeActive;
++ (void)sceneWillResignActive;
++ (void)sceneWillEnterForeground;
++ (void)sceneDidEnterBackground;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UNNotificationRequest;
 @class UNMutableNotificationContent;
 @class UNNotificationContent;
