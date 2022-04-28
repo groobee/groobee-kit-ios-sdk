@@ -1,15 +1,33 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name GroobeeKit
+import AdSupport
+import CoreLocation
 import Foundation
+import MapKit
 import Swift
 import UIKit
 import UserNotifications
 import UserNotificationsUI
-@_hasMissingDesignatedInitializers public class StickyButtonView {
+import WebKit
+@_hasMissingDesignatedInitializers @available(iOS 11.0, *)
+public class StickyButtonView {
+  public static func getInstance() -> GroobeeKit.StickyButtonView
+  public func show(inAppMessage: GroobeeKit.InAppMessageModel)
+  public func dismiss()
+  public func isShowing() -> Swift.Bool
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class Goods : ObjectiveC.NSObject, Swift.Codable {
+  public var goodsNm: Swift.String?
+  public var goodsCd: Swift.String?
+  public var goodsCate: Swift.String?
+  public var goodsCateNm: Swift.String?
+  public var goodsAmt: Swift.String?
+  public var goodsPrc: Swift.String?
+  public var goodsSalePrc: Swift.String?
+  public var goodsCnt: Swift.String?
+  public var goodsImg: Swift.String?
   @objc public func getGoodsNm() -> Swift.String?
   @objc public func getGoodsCd() -> Swift.String?
   @objc public func getGoodsCate() -> Swift.String?
@@ -33,11 +51,22 @@ import UserNotificationsUI
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-@_hasMissingDesignatedInitializers public class stickBannerView {
+@_hasMissingDesignatedInitializers @available(iOS 11.0, *)
+public class StickyBannerView {
+  public static func getInstance() -> GroobeeKit.StickyBannerView
+  public func show(inAppMessage: GroobeeKit.InAppMessageModel)
+  public func dismiss()
+  public func isShowing() -> Swift.Bool
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class CategoryData : ObjectiveC.NSObject, Swift.Codable {
-  @objc override dynamic public init()
+@_hasMissingDesignatedInitializers @available(iOS 11.0, *)
+public class AutoLayout {
+  public static func setLayoutGravityConstraints(view: UIKit.UIView, targetView: UIKit.UIView, presentedView: UIKit.UIView? = nil, targetLeadingAnchor: UIKit.NSLayoutXAxisAnchor? = nil, targetTrailingAnchor: UIKit.NSLayoutXAxisAnchor? = nil, leadingConstant: CoreGraphics.CGFloat? = nil, trailingConstant: CoreGraphics.CGFloat? = nil, centerXAnchor: UIKit.NSLayoutXAxisAnchor? = nil, centerYAnchor: UIKit.NSLayoutYAxisAnchor? = nil, multiplier: CoreGraphics.CGFloat? = nil, gravity: Swift.Int? = nil) -> UIKit.UIView
+  public static func setChildViewsConstraints(view: UIKit.UIView, stackView: UIKit.UIStackView? = nil, targetAnchor: UIKit.NSLayoutDimension? = nil, topAnchor: UIKit.NSLayoutYAxisAnchor? = nil, bottomAnchor: UIKit.NSLayoutYAxisAnchor? = nil, leadingAnchor: UIKit.NSLayoutXAxisAnchor? = nil, trailingAnchor: UIKit.NSLayoutXAxisAnchor? = nil, topConstant: CoreGraphics.CGFloat? = nil, bottomConstant: CoreGraphics.CGFloat? = nil, leadingConstant: CoreGraphics.CGFloat? = nil, trailingConstant: CoreGraphics.CGFloat? = nil, widthConstant: CoreGraphics.CGFloat? = nil, heightConstant: CoreGraphics.CGFloat? = nil, centerXAnchor: UIKit.NSLayoutXAxisAnchor? = nil, centerYAnchor: UIKit.NSLayoutYAxisAnchor? = nil, multiplier: CoreGraphics.CGFloat? = nil)
+  @objc deinit
+}
+public typealias DetectClickedButton = () -> Swift.Void
+@_hasMissingDesignatedInitializers public class CategoryData : Swift.Codable {
   public func getCateCd() -> Swift.String?
   public func getCateNm() -> Swift.String?
   public func setCateCd(_ cateCd: Swift.String) -> GroobeeKit.CategoryData
@@ -46,6 +75,7 @@ import UserNotificationsUI
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
+@available(iOS 11.0, *)
 extension GroobeeServiceManager {
   public static func responseService(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any])
   public static func responseInAppMessage(screenId: Swift.String?, response: [Swift.String : Any])
@@ -55,24 +85,44 @@ extension GroobeeServiceManager {
   public static func open(url: Swift.String)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Groobee : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @available(iOS 11.0, *)
+@objc public class Groobee : ObjectiveC.NSObject {
   public var runtimeConfigProvider: GroobeeKit.RuntimeConfigProvider?
   @objc public static func getInstance() -> GroobeeKit.Groobee
   @objc public static func configure(groobeeConfig: GroobeeKit.GroobeeConfig?)
-  @objc public func setServicekey(groobeeConfig: GroobeeKit.GroobeeConfig?)
+  @objc public func setServiceKey(groobeeConfig: GroobeeKit.GroobeeConfig?)
+  @objc public func setServiceLogin(memberId: Swift.String)
   @objc public func setPushAgreeAP(isPushAgreedAP: Swift.Bool)
   @objc public func setPushAgreeAA(isPushAgreedAA: Swift.Bool)
   @objc public func setPushAgreeAN(isPushAgreedAN: Swift.Bool)
   @objc public func setPushToken(pushToken: Swift.String)
-  @available(iOS 10.0, *)
   @objc public func userNotificationCenter(userInfo: [Swift.AnyHashable : Any])
-  @available(iOS 10.0, *)
   @objc public func didReceiveRemoteNotification(userInfo: [Swift.AnyHashable : Any])
-  @available(iOS 10.0, *)
   @objc public func inDirectPushOpened()
+  @objc public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.String, gender: Swift.String, type: Swift.String)
+  @objc public func setMemberJoin(memberId: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  @objc public func setSearchKeyword(searchKwd: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  @objc public func setShoppingCart(goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  @objc public func setGoodsOrder(goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  @objc public func setGoodsOrderComplete(orderNo: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  @objc public func setViewGoods(goods: GroobeeKit.Goods, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  @objc public func setCategory(cateCd: Swift.String, cateNm: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  @objc public func setCustomerData(customData: Foundation.NSMutableDictionary)
+  @objc public func setScreenData(screenName: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  @objc public func setAppSessionStart(isTerminated: Swift.Bool)
+  @objc public func setAppSessionEnd(isTerminated: Swift.Bool, iosSessionDtm: Swift.String)
+  @objc public func setAppLocationInfo(userLocation: CoreLocation.CLLocation)
+  @objc public func setWebViewCookies(webView: WebKit.WKWebView, urlRequest: Foundation.URLRequest)
+  public func setStatsCL(campaignKey: Swift.String, msgType: Swift.String, clickData: GroobeeKit.ClickData, trackingId: Swift.String?)
+  public func setStatsDI(campaignKey: Swift.String, msgType: Swift.String)
+  public func dismissMessages()
+  public func showInAppMessage(inAppMessage: GroobeeKit.InAppMessageModel, campaignKey: Swift.String, msgType: Swift.String)
   @objc deinit
+  @objc override dynamic public init()
 }
-@_hasMissingDesignatedInitializers public class GroobeeKitLifeCycle {
+@_hasMissingDesignatedInitializers @available(iOS 11.0, *)
+public class GroobeeKitLifeCycle {
+  public static var runtimeConfigProvider: GroobeeKit.RuntimeConfigProvider
   public static func sceneDidDisconnect()
   public static func sceneDidBecomeActive()
   public static func sceneWillResignActive()
@@ -86,7 +136,8 @@ public struct MessageText : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-@_hasMissingDesignatedInitializers public class GroobeeServiceManager {
+@_hasMissingDesignatedInitializers @available(iOS 11.0, *)
+public class GroobeeServiceManager {
   public static var PATTERN_MATCHES_URL: Swift.String
   public static func sendSyncRequest(_ url: Swift.String, _ request: Swift.String) -> Swift.Bool
   public static func sendRequest(_ url: Swift.String, _ request: Swift.String, screenId: Swift.String? = nil)
@@ -100,11 +151,14 @@ public struct InAppMessageModel : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-@objc @_inheritsConvenienceInitializers public class PopUpViewController : UIKit.UIViewController {
-  @objc override dynamic public func viewDidLoad()
+@_hasMissingDesignatedInitializers @available(iOS 11.0, *)
+public class PopUpView {
+  final public let dimView: UIKit.UIView
+  public static func getInstance() -> GroobeeKit.PopUpView
+  public func show(inAppMessage: GroobeeKit.InAppMessageModel)
+  public func dismiss()
+  public func isShowing() -> Swift.Bool
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 @objc public class GroobeeConfig : ObjectiveC.NSObject {
   @objc public init(builder: GroobeeKit.GroobeeConfig.GroobeeConfigBuilder)
@@ -123,17 +177,55 @@ public struct InAppMessageModel : Swift.Codable {
   @objc deinit
   @objc override dynamic public init()
 }
-@_inheritsConvenienceInitializers @objc public class MemberData : ObjectiveC.NSObject, Swift.Codable {
-  @objc public func getId() -> Swift.String?
-  @objc public func getGrade() -> Swift.String?
-  @objc public func getAge() -> Swift.Int
-  @objc public func getGender() -> Swift.String?
-  @objc public func setId(_ id: Swift.String) -> GroobeeKit.MemberData
-  @objc public func setGrade(_ grade: Swift.String) -> GroobeeKit.MemberData
-  @objc public func setAge(_ age: Swift.Int) -> GroobeeKit.MemberData
-  @objc public func setGender(_ gender: Swift.String) -> GroobeeKit.MemberData
+@_hasMissingDesignatedInitializers @available(iOS 11.0, *)
+public class StyleConstraints {
+  public static var CORNER_RADIUS_TRUE: CoreGraphics.CGFloat
+  public static var CORNER_RADIUS_FALSE: CoreGraphics.CGFloat
+  public static var IS_ROUND_TRUE: Swift.Int
+  public static var TXT_SIZE_STICKY_COMMON: CoreGraphics.CGFloat
+  public static var TXT_STYLE_REGULAR: Swift.Int
+  public static var TXT_STYLE_BOLD: Swift.Int
+  public static var TXT_STYLE_ITALIC: Swift.Int
+  public static var TXT_GRAVITY_CENTER: Swift.Int
+  public static var TXT_GRAVITY_LEFT: Swift.Int
+  public static var TXT_GRAVITY_RIGHT: Swift.Int
+  public static var BACKGROUND_COLOR_POPUP: Swift.String
+  public static var ALPHA_DIM_VIEW: CoreGraphics.CGFloat
+  public static var IMAGE_VIEW_MARGIN: CoreGraphics.CGFloat
+  public static var POP_UP: Swift.String
+  public static var STICKY_DEFAULT: Swift.String
+  public static var OBJECTS_CORNER_RADIUS_TRUE: CoreGraphics.CGFloat
+  public static var TXT_SIZE_STICKY_BUTTON_BODY: CoreGraphics.CGFloat
+  public static var STICKY_BUTTON: Swift.String
+  public static var GRAVITY_TOP: Swift.Int
+  public static var GRAVITY_BOTTOM: Swift.Int
+  public static func setContainerViewStyle(inAppMessage: GroobeeKit.InAppMessageModel?, view: UIKit.UIView)
+  public static func fadeInAnimation(view: UIKit.UIView)
+  public static func setViewCornerRadius(isRound: Swift.Int?, view: UIKit.UIView, isParentView: Swift.Bool)
+  public static func setTextLabelAlignment(gravity: Swift.Int, label: UIKit.UILabel)
+  public static func setTextStyle(messageText: GroobeeKit.MessageText?, textLabel: UIKit.UILabel, isBodyStickyButton: Swift.Bool)
+  public static func setTextLabels(messageText: GroobeeKit.MessageText?, label: UIKit.UILabel, isBodyStickyButton: Swift.Bool)
+  public static func setCloseButton(url: Swift.String, button: UIKit.UIButton)
+  public static func setBackgroundColor(view: UIKit.UIView, color: Swift.String)
   @objc deinit
-  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers public class MemberData : Swift.Codable {
+  public var id: Swift.String?
+  public var grade: Swift.String?
+  public var age: Swift.String?
+  public var gender: Swift.String?
+  public var type: Swift.String?
+  public func getId() -> Swift.String?
+  public func getGrade() -> Swift.String?
+  public func getAge() -> Swift.String?
+  public func getGender() -> Swift.String?
+  public func getType() -> Swift.String?
+  public func setId(_ id: Swift.String) -> GroobeeKit.MemberData
+  public func setGrade(_ grade: Swift.String) -> GroobeeKit.MemberData
+  public func setAge(_ age: Swift.String) -> GroobeeKit.MemberData
+  public func setGender(_ gender: Swift.String) -> GroobeeKit.MemberData
+  public func setType(_ type: Swift.String) -> GroobeeKit.MemberData
+  @objc deinit
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
@@ -168,114 +260,141 @@ public class RuntimeConfigProvider {
   public static func addData(preference: Foundation.UserDefaults, key: Swift.String, value: Any)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class AppData : ObjectiveC.NSObject, Swift.Codable {
+@objc @_inheritsConvenienceInitializers public class AppData : ObjectiveC.NSObject, Swift.Codable {
   @objc override dynamic public init()
-  @objc public func getPackageName() -> Swift.String?
-  @objc public func getAgreedType() -> Swift.String?
-  @objc public func getPushOpened() -> Swift.Bool
-  @objc public func getAgreedAP() -> Swift.Bool
-  @objc public func getAgreedAA() -> Swift.Bool
-  @objc public func getAgreedAN() -> Swift.Bool
-  @objc public func getToken() -> Swift.String?
-  @objc public func getAdid() -> Swift.String?
-  @objc public func getAppName() -> Swift.String?
-  @objc public func getAppVersion() -> Swift.String?
-  @objc public func getDeviceOS() -> Swift.String?
-  @objc public func getDeviceSDK() -> Swift.String?
-  @objc public func getFirmwareName() -> Swift.String?
-  @objc public func getScreenAct() -> Swift.String?
-  @objc public func getScreenName() -> Swift.String?
-  @objc public func getScreenData() -> Swift.String?
-  @objc public func getTerMinated() -> Swift.Bool
-  @objc public func getIosSessionDtm() -> Swift.String?
-  @objc public func getLatitude() -> Swift.Double
-  @objc public func getLongitude() -> Swift.Double
-  @objc public func getCampaignKeyList() -> [GroobeeKit.PushData]?
-  @objc public func setPackageName(_ packageName: Swift.String) -> GroobeeKit.AppData
-  @objc public func setAgreedType(_ agreedType: Swift.String) -> GroobeeKit.AppData
+  public func getPackageName() -> Swift.String?
+  public func getAgreedType() -> Swift.String?
+  public func getPushOpened() -> Swift.Bool
+  public func getAgreedAP() -> Swift.Bool
+  public func getAgreedAA() -> Swift.Bool
+  public func getAgreedAN() -> Swift.Bool
+  public func getToken() -> Swift.String?
+  public func getAdid() -> Swift.String?
+  public func getAppName() -> Swift.String?
+  public func getAppVersion() -> Swift.String?
+  public func getDeviceOS() -> Swift.String?
+  public func getDeviceSDK() -> Swift.String?
+  public func getFirmwareName() -> Swift.String?
+  public func getScreenAct() -> Swift.String?
+  public func getScreenName() -> Swift.String?
+  public func getScreenData() -> Swift.String?
+  public func getTerMinated() -> Swift.Bool
+  public func getIosSessionDtm() -> Swift.String?
+  public func getLatitude() -> Swift.Double
+  public func getLongitude() -> Swift.Double
+  public func getCampaignKeyList() -> [GroobeeKit.PushData]?
+  public func setPackageName(_ packageName: Swift.String) -> GroobeeKit.AppData
+  public func setAgreedType(_ agreedType: Swift.String) -> GroobeeKit.AppData
   @discardableResult
-  @objc public func setPushOpened(_ pushOpened: Swift.Bool) -> GroobeeKit.AppData
+  public func setPushOpened(_ pushOpened: Swift.Bool) -> GroobeeKit.AppData
   @discardableResult
-  @objc public func setAgreedAP(_ agreedAP: Swift.Bool) -> GroobeeKit.AppData
+  public func setAgreedAP(_ agreedAP: Swift.Bool) -> GroobeeKit.AppData
   @discardableResult
-  @objc public func setAgreedAA(_ agreedAA: Swift.Bool) -> GroobeeKit.AppData
+  public func setAgreedAA(_ agreedAA: Swift.Bool) -> GroobeeKit.AppData
   @discardableResult
-  @objc public func setAgreedAN(_ agreedAN: Swift.Bool) -> GroobeeKit.AppData
-  @objc public func setPushToken(_ token: Swift.String) -> GroobeeKit.AppData
-  @objc public func setAdid(_ adid: Swift.String) -> GroobeeKit.AppData
-  @objc public func setAppName(_ appName: Swift.String) -> GroobeeKit.AppData
-  @objc public func setAppVersion(_ appVersion: Swift.String) -> GroobeeKit.AppData
-  @objc public func setDeviceOS(_ deviceOS: Swift.String) -> GroobeeKit.AppData
-  @objc public func setDeviceSDK(_ deviceSDK: Swift.String) -> GroobeeKit.AppData
-  @objc public func setFirmwareName(_ firmwareName: Swift.String) -> GroobeeKit.AppData
-  @objc public func setScreenAct(_ screenAct: Swift.String) -> GroobeeKit.AppData
-  @objc public func setScreenName(_ screenName: Swift.String) -> GroobeeKit.AppData
-  @objc public func setScreenData(_ screenData: Swift.String) -> GroobeeKit.AppData
-  @objc public func setTerMinated(_ terMinated: Swift.Bool) -> GroobeeKit.AppData
-  @objc public func setIosSessionDtm(_ iosSessionDtm: Swift.String) -> GroobeeKit.AppData
-  @objc public func setLatitude(_ latitude: Swift.Double) -> GroobeeKit.AppData
-  @objc public func setLongitude(_ longitude: Swift.Double) -> GroobeeKit.AppData
-  @objc public func setCampaignKeyList(_ campaignKeyList: [GroobeeKit.PushData]) -> GroobeeKit.AppData
+  public func setAgreedAN(_ agreedAN: Swift.Bool) -> GroobeeKit.AppData
+  public func setPushToken(_ token: Swift.String) -> GroobeeKit.AppData
+  public func setAdid(_ adid: Swift.String) -> GroobeeKit.AppData
+  public func setAppName(_ appName: Swift.String) -> GroobeeKit.AppData
+  public func setAppVersion(_ appVersion: Swift.String) -> GroobeeKit.AppData
+  public func setDeviceOS(_ deviceOS: Swift.String) -> GroobeeKit.AppData
+  public func setDeviceSDK(_ deviceSDK: Swift.String) -> GroobeeKit.AppData
+  public func setFirmwareName(_ firmwareName: Swift.String) -> GroobeeKit.AppData
+  public func setScreenAct(_ screenAct: Swift.String) -> GroobeeKit.AppData
+  public func setScreenName(_ screenName: Swift.String) -> GroobeeKit.AppData
+  public func setScreenData(_ screenData: Swift.String) -> GroobeeKit.AppData
+  public func setTerMinated(_ terMinated: Swift.Bool) -> GroobeeKit.AppData
+  public func setIosSessionDtm(_ iosSessionDtm: Swift.String) -> GroobeeKit.AppData
+  public func setLatitude(_ latitude: Swift.Double) -> GroobeeKit.AppData
+  public func setLongitude(_ longitude: Swift.Double) -> GroobeeKit.AppData
+  public func setCampaignKeyList(_ campaignKeyList: [GroobeeKit.PushData]) -> GroobeeKit.AppData
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
 @_hasMissingDesignatedInitializers public class ModelBuilder {
   public static func authServiceKey(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, packageName: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
-  public static func servicePushMessage(serviceKey: Swift.String, actionCd: Swift.String, cookieId: Swift.String, userId: Swift.String, isPushOpened: Swift.Bool? = nil, campaignKeyList: [GroobeeKit.PushData], memberId: Swift.String?) -> GroobeeKit.RequestParams
+  public static func authServiceLogin(serviceKey: Swift.String, cookieId: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
   public static func authPushAgreed(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, isAgreed: Swift.Bool, agreedType: Swift.String) -> GroobeeKit.RequestParams
   public static func authPushToken(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, pushToken: Swift.String) -> GroobeeKit.RequestParams
+  public static func authAppAdId(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, adId: Swift.String) -> GroobeeKit.RequestParams
+  public static func authAppEtc(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, appName: Swift.String, appVersion: Swift.String, appOSVersion: Swift.String) -> GroobeeKit.RequestParams
+  public static func authWebViewCookies(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, webCookieId: Swift.String, webUserId: Swift.String) -> GroobeeKit.RequestParams
+  public static func servicePushMessage(serviceKey: Swift.String, actionCd: Swift.String, cookieId: Swift.String, userId: Swift.String, isPushOpened: Swift.Bool? = nil, campaignKeyList: [GroobeeKit.PushData], memberId: Swift.String?, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceUserInfo(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, id: Swift.String, grade: Swift.String, age: Swift.String, gender: Swift.String, type: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
+  public static func serviceMemberJoin(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String, screenId: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceSearchKeyword(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, searchKwd: Swift.String, screenId: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceShoppingCart(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceGoodsOrder(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceGoodsOrderComplete(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, orderNo: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceViewGoods(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, goods: GroobeeKit.Goods, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceCategory(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, cateCd: Swift.String, cateNm: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceCustomerData(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, customData: Foundation.NSMutableDictionary, memberData: GroobeeKit.MemberData?) -> [Swift.String : Any]
+  public static func serviceScreenData(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, screenName: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceAppSessionStart(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, isTerminated: Swift.Bool, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceAppSessionEnd(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, isTerminated: Swift.Bool, iosSessionDtm: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceAppLocation(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, latitude: Swift.Double, longitude: Swift.Double, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func statsDI(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, msgType: Swift.String, memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
+  public static func statsCL(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, msgType: Swift.String, clickData: GroobeeKit.ClickData, trackingId: Swift.String? = nil, memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class RequestParams : ObjectiveC.NSObject, Swift.Codable {
-  @objc public func getServiceKey() -> Swift.String?
-  @objc public func getCookieId() -> Swift.String?
-  @objc public func getUserId() -> Swift.String?
-  @objc public func getDeviceType() -> Swift.String?
-  @objc public func getDeviceCd() -> Swift.String?
-  @objc public func getOsCd() -> Swift.String?
-  @objc public func getMemberId() -> Swift.String?
-  @objc public func getScreenId() -> Swift.String?
-  @objc public func getActionCd() -> Swift.String?
-  @objc public func getSearchKwd() -> Swift.String?
-  @objc public func getMsgType() -> Swift.String?
-  @objc public func getCampaignKey() -> Swift.String?
-  @objc public func getCampaignTypeCd() -> Swift.String?
-  @objc public func getTrackingId() -> Swift.String?
-  @objc public func getOrderNo() -> Swift.String?
-  @objc public func getAppData() -> GroobeeKit.AppData?
-  @objc public func getMemberData() -> GroobeeKit.MemberData?
-  @objc public func getGoods() -> Swift.Array<GroobeeKit.Goods>?
-  @objc public func getCategory() -> GroobeeKit.CategoryData?
-  @objc public func setServiceKey(_ serviceKey: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setCookieId(_ cookieId: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setUserId(_ userId: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setDeviceType(_ deviceType: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setDeviceCd(_ deviceCd: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setOsCd(_ osCd: Swift.String) -> GroobeeKit.RequestParams
+@_hasMissingDesignatedInitializers public class RequestParams : Swift.Codable {
+  public func getServiceKey() -> Swift.String?
+  public func getCookieId() -> Swift.String?
+  public func getUserId() -> Swift.String?
+  public func getDeviceType() -> Swift.String?
+  public func getDeviceCd() -> Swift.String?
+  public func getOsCd() -> Swift.String?
+  public func getMemberId() -> Swift.String?
+  public func getScreenId() -> Swift.String?
+  public func getActionCd() -> Swift.String?
+  public func getSearchKwd() -> Swift.String?
+  public func getMsgType() -> Swift.String?
+  public func getCampaignKey() -> Swift.String?
+  public func getCampaignTypeCd() -> Swift.String?
+  public func getTrackingId() -> Swift.String?
+  public func getClickData() -> GroobeeKit.ClickData?
+  public func getOrderNo() -> Swift.String?
+  public func getAppData() -> GroobeeKit.AppData?
+  public func getMemberData() -> GroobeeKit.MemberData?
+  public func getGoods() -> Swift.Array<GroobeeKit.Goods>?
+  public func getCategory() -> GroobeeKit.CategoryData?
+  public func setServiceKey(_ serviceKey: Swift.String) -> GroobeeKit.RequestParams
+  public func setCookieId(_ cookieId: Swift.String) -> GroobeeKit.RequestParams
+  public func setUserId(_ userId: Swift.String) -> GroobeeKit.RequestParams
+  public func setDeviceType(_ deviceType: Swift.String) -> GroobeeKit.RequestParams
+  public func setDeviceCd(_ deviceCd: Swift.String) -> GroobeeKit.RequestParams
+  public func setOsCd(_ osCd: Swift.String) -> GroobeeKit.RequestParams
   @discardableResult
-  @objc public func setMemberId(_ memberId: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setScreenId(_ screenId: Swift.String) -> GroobeeKit.RequestParams
+  public func setMemberId(_ memberId: Swift.String) -> GroobeeKit.RequestParams
+  public func setScreenId(_ screenId: Swift.String) -> GroobeeKit.RequestParams
   @discardableResult
-  @objc public func setActionCd(_ actionCd: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setSearchKwd(_ searchKwd: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setMsgType(_ msgType: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setCampaignKey(_ campaignKey: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setCampaignTypeCd(_ campaignTypeCd: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setTrackingId(_ trackingId: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setOrderNo(_ orderNo: Swift.String) -> GroobeeKit.RequestParams
-  @objc public func setAppData(_ appData: GroobeeKit.AppData) -> GroobeeKit.RequestParams
-  @objc public func setMemberData(_ memberData: GroobeeKit.MemberData) -> GroobeeKit.RequestParams
-  @objc public func setGoods(_ goods: Swift.Array<GroobeeKit.Goods>) -> GroobeeKit.RequestParams
-  @objc public func setCategory(_ category: GroobeeKit.CategoryData) -> GroobeeKit.RequestParams
-  @objc override dynamic public init()
-  required public init(from decoder: Swift.Decoder) throws
+  public func setActionCd(_ actionCd: Swift.String) -> GroobeeKit.RequestParams
+  public func setSearchKwd(_ searchKwd: Swift.String) -> GroobeeKit.RequestParams
+  @discardableResult
+  public func setMsgType(_ msgType: Swift.String) -> GroobeeKit.RequestParams
+  public func setCampaignKey(_ campaignKey: Swift.String) -> GroobeeKit.RequestParams
+  @discardableResult
+  public func setCampaignTypeCd(_ campaignTypeCd: Swift.String) -> GroobeeKit.RequestParams
+  @discardableResult
+  public func setTrackingId(_ trackingId: Swift.String?) -> GroobeeKit.RequestParams
+  @discardableResult
+  public func setClickData(_ clickData: GroobeeKit.ClickData) -> GroobeeKit.RequestParams
+  public func setOrderNo(_ orderNo: Swift.String) -> GroobeeKit.RequestParams
+  public func setWebCookieId(_ webCookieId: Swift.String) -> GroobeeKit.RequestParams
+  public func setWebUserId(_ webUserId: Swift.String) -> GroobeeKit.RequestParams
+  public func setAppData(_ appData: GroobeeKit.AppData) -> GroobeeKit.RequestParams
+  @discardableResult
+  public func setMemberData(_ memberData: GroobeeKit.MemberData) -> GroobeeKit.RequestParams
+  public func setGoods(_ goods: Swift.Array<GroobeeKit.Goods>) -> GroobeeKit.RequestParams
+  public func setCategory(_ category: GroobeeKit.CategoryData) -> GroobeeKit.RequestParams
   @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
 @_inheritsConvenienceInitializers @available(iOS 11.0, *)
-@objc open class GroobeeKitNotification : ObjectiveC.NSObject {
-  @objc public static func getInstance() -> GroobeeKit.GroobeeKitNotification
+@objc open class GroobeeNotification : ObjectiveC.NSObject {
+  @objc public static func getInstance() -> GroobeeKit.GroobeeNotification
   @objc public func receiveService(_ request: UserNotifications.UNNotificationRequest, _ bestAttemptContent: UserNotifications.UNMutableNotificationContent, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void) -> Swift.Bool
   @objc public func receiveContent(_ notification: UserNotifications.UNNotification) -> Swift.Bool
   @objc deinit
@@ -299,4 +418,13 @@ public enum StateLifeCycle {
 public struct MessageButton : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers @available(iOS 11.0, *)
+public class InAppMessageDisplay {
+  public static func getInstance() -> GroobeeKit.InAppMessageDisplay
+  public func setClickEvent(detect: GroobeeKit.DetectClickedButton? = nil)
+  public func isShowing() -> Swift.Bool
+  public func dismissMessage()
+  public func show(inAppMessage: GroobeeKit.InAppMessageModel, campaignKey: Swift.String, msgType: Swift.String)
+  @objc deinit
 }

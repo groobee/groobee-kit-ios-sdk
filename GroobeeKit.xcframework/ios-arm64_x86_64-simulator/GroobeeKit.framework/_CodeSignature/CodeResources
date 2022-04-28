@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/GroobeeKit-Swift.h</key>
 		<data>
-		p30pRKlL3TfkzFk8ldBlIxj1Bhs=
+		hpR8b5KWQV/Da0/PYO/tzfRkOag=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		40S0cwtauy7c4dDHUZpm2U1Lmzw=
+		eafFfcANa+UbYn4+gUUNKhGrPx0=
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Pnkny++JxUXQni0Wb3rDCWMlvnk=
+		cpiKLK2OiQhXKu6WnINNcJEhZCw=
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		W2ktQw5g01HOQAJr4pn1DzyFvh0=
+		RQ5u0aMp76odW46drcjAgtjqd2o=
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		Pnkny++JxUXQni0Wb3rDCWMlvnk=
+		cpiKLK2OiQhXKu6WnINNcJEhZCw=
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		W2ktQw5g01HOQAJr4pn1DzyFvh0=
+		RQ5u0aMp76odW46drcjAgtjqd2o=
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		7MYe2jrk+BMfW02xi4s+GU5uXYs=
+		fHt9hXuH1XE/eDTT0kOmeroD/+o=
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		FMYqVY09sy1f82VWZwQUGbuEaaw=
+		g7LLxWSta9zmxL/phhwpJG9cFgE=
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		7MYe2jrk+BMfW02xi4s+GU5uXYs=
+		fHt9hXuH1XE/eDTT0kOmeroD/+o=
 		</data>
 		<key>Modules/GroobeeKit.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		FMYqVY09sy1f82VWZwQUGbuEaaw=
+		g7LLxWSta9zmxL/phhwpJG9cFgE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UCAlR778eYbLGBxX4MGUL2Ep4Ts6JEUtZX0MTBzNMiU=
+			/BTNZnUM/kl2GhqNekY437z0GGdGTRgLlFApGwH2e2E=
 			</data>
 		</dict>
 		<key>Modules/GroobeeKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -81,14 +81,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TncS96VS3co5pmVI0E94ILnn0OBqDCHBXiYt/yIH5h0=
+			5CrFRX9zsakI2QS61tQhzznmJ4XMHmDt9OscxEb2QMA=
 			</data>
 		</dict>
 		<key>Modules/GroobeeKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DyfTTyRMMZECN0opUnU2hFy6IcWnZbGDMp9xERW/04s=
+			XAFfhVIv3/5Rn9UEJRSf1xJKaZmkfh5mw3VOREq/PKw=
 			</data>
 		</dict>
 		<key>Modules/GroobeeKit.swiftmodule/arm64.swiftdoc</key>
@@ -102,14 +102,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TncS96VS3co5pmVI0E94ILnn0OBqDCHBXiYt/yIH5h0=
+			5CrFRX9zsakI2QS61tQhzznmJ4XMHmDt9OscxEb2QMA=
 			</data>
 		</dict>
 		<key>Modules/GroobeeKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DyfTTyRMMZECN0opUnU2hFy6IcWnZbGDMp9xERW/04s=
+			XAFfhVIv3/5Rn9UEJRSf1xJKaZmkfh5mw3VOREq/PKw=
 			</data>
 		</dict>
 		<key>Modules/GroobeeKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -123,14 +123,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uGloyxPOZcroRzs/ic2ymymZZNTEut8zvPpv7pjq0Jc=
+			gsAPQ7+2J9oFQb8csHeinUAgyAmPpRYa7BH7DsNQfKo=
 			</data>
 		</dict>
 		<key>Modules/GroobeeKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WV8NqvAJJtXSfvCRwTpfI0Lik2KCI01N+qGM/evLO7s=
+			S91EYartZ6wpEYyd2hcL8FSbQ7uhoy9W7hg3otYdAiQ=
 			</data>
 		</dict>
 		<key>Modules/GroobeeKit.swiftmodule/x86_64.swiftdoc</key>
@@ -144,14 +144,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uGloyxPOZcroRzs/ic2ymymZZNTEut8zvPpv7pjq0Jc=
+			gsAPQ7+2J9oFQb8csHeinUAgyAmPpRYa7BH7DsNQfKo=
 			</data>
 		</dict>
 		<key>Modules/GroobeeKit.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WV8NqvAJJtXSfvCRwTpfI0Lik2KCI01N+qGM/evLO7s=
+			S91EYartZ6wpEYyd2hcL8FSbQ7uhoy9W7hg3otYdAiQ=
 			</data>
 		</dict>
 	</dict>

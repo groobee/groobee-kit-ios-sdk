@@ -193,7 +193,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
-@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -211,58 +210,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class PushData;
 
 SWIFT_CLASS("_TtC10GroobeeKit7AppData")
 @interface AppData : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (NSString * _Nullable)getPackageName SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getAgreedType SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)getPushOpened SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)getAgreedAP SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)getAgreedAA SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)getAgreedAN SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getToken SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getAdid SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getAppName SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getAppVersion SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getDeviceOS SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getDeviceSDK SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getFirmwareName SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getScreenAct SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getScreenName SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getScreenData SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)getTerMinated SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getIosSessionDtm SWIFT_WARN_UNUSED_RESULT;
-- (double)getLatitude SWIFT_WARN_UNUSED_RESULT;
-- (double)getLongitude SWIFT_WARN_UNUSED_RESULT;
-- (NSArray<PushData *> * _Nullable)getCampaignKeyList SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setPackageName:(NSString * _Nonnull)packageName SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setAgreedType:(NSString * _Nonnull)agreedType SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setPushOpened:(BOOL)pushOpened;
-- (AppData * _Nonnull)setAgreedAP:(BOOL)agreedAP;
-- (AppData * _Nonnull)setAgreedAA:(BOOL)agreedAA;
-- (AppData * _Nonnull)setAgreedAN:(BOOL)agreedAN;
-- (AppData * _Nonnull)setPushToken:(NSString * _Nonnull)token SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setAdid:(NSString * _Nonnull)adid SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setAppName:(NSString * _Nonnull)appName SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setAppVersion:(NSString * _Nonnull)appVersion SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setDeviceOS:(NSString * _Nonnull)deviceOS SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setDeviceSDK:(NSString * _Nonnull)deviceSDK SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setFirmwareName:(NSString * _Nonnull)firmwareName SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setScreenAct:(NSString * _Nonnull)screenAct SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setScreenName:(NSString * _Nonnull)screenName SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setScreenData:(NSString * _Nonnull)screenData SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setTerMinated:(BOOL)terMinated SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setIosSessionDtm:(NSString * _Nonnull)iosSessionDtm SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setLatitude:(double)latitude SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setLongitude:(double)longitude SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setCampaignKeyList:(NSArray<PushData *> * _Nonnull)campaignKeyList SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-SWIFT_CLASS("_TtC10GroobeeKit12CategoryData")
-@interface CategoryData : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -291,21 +241,38 @@ SWIFT_CLASS("_TtC10GroobeeKit5Goods")
 @end
 
 @class GroobeeConfig;
+@class NSMutableDictionary;
+@class CLLocation;
+@class WKWebView;
 
-SWIFT_CLASS("_TtC10GroobeeKit7Groobee")
+SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface Groobee : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 + (Groobee * _Nonnull)getInstance SWIFT_WARN_UNUSED_RESULT;
 + (void)configureWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
-- (void)setServicekeyWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
+- (void)setServiceKeyWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
+- (void)setServiceLoginWithMemberId:(NSString * _Nonnull)memberId;
 - (void)setPushAgreeAPWithIsPushAgreedAP:(BOOL)isPushAgreedAP;
 - (void)setPushAgreeAAWithIsPushAgreedAA:(BOOL)isPushAgreedAA;
 - (void)setPushAgreeANWithIsPushAgreedAN:(BOOL)isPushAgreedAN;
 - (void)setPushTokenWithPushToken:(NSString * _Nonnull)pushToken;
-- (void)userNotificationCenterWithUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_AVAILABILITY(ios,introduced=10.0);
-- (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_AVAILABILITY(ios,introduced=10.0);
-- (void)inDirectPushOpened SWIFT_AVAILABILITY(ios,introduced=10.0);
+- (void)userNotificationCenterWithUserInfo:(NSDictionary * _Nonnull)userInfo;
+- (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
+- (void)inDirectPushOpened;
+- (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type;
+- (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setShoppingCartWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setGoodsOrderWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setViewGoodsWithGoods:(Goods * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
+- (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
+- (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
+- (void)setAppLocationInfoWithUserLocation:(CLLocation * _Nonnull)userLocation;
+- (void)setWebViewCookiesWithWebView:(WKWebView * _Nonnull)webView urlRequest:(NSURLRequest * _Nonnull)urlRequest;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class GroobeeConfigBuilder;
@@ -336,36 +303,12 @@ SWIFT_CLASS("_TtCC10GroobeeKit13GroobeeConfig20GroobeeConfigBuilder")
 @class UNNotificationContent;
 @class UNNotification;
 
-SWIFT_CLASS("_TtC10GroobeeKit22GroobeeKitNotification") SWIFT_AVAILABILITY(ios,introduced=11.0)
-@interface GroobeeKitNotification : NSObject
-+ (GroobeeKitNotification * _Nonnull)getInstance SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS("_TtC10GroobeeKit19GroobeeNotification") SWIFT_AVAILABILITY(ios,introduced=11.0)
+@interface GroobeeNotification : NSObject
++ (GroobeeNotification * _Nonnull)getInstance SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)receiveService:(UNNotificationRequest * _Nonnull)request :(UNMutableNotificationContent * _Nonnull)bestAttemptContent withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)receiveContent:(UNNotification * _Nonnull)notification SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC10GroobeeKit10MemberData")
-@interface MemberData : NSObject
-- (NSString * _Nullable)getId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGrade SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)getAge SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGender SWIFT_WARN_UNUSED_RESULT;
-- (MemberData * _Nonnull)setId:(NSString * _Nonnull)id SWIFT_WARN_UNUSED_RESULT;
-- (MemberData * _Nonnull)setGrade:(NSString * _Nonnull)grade SWIFT_WARN_UNUSED_RESULT;
-- (MemberData * _Nonnull)setAge:(NSInteger)age SWIFT_WARN_UNUSED_RESULT;
-- (MemberData * _Nonnull)setGender:(NSString * _Nonnull)gender SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSBundle;
-@class NSCoder;
-
-SWIFT_CLASS("_TtC10GroobeeKit19PopUpViewController")
-@interface PopUpViewController : UIViewController
-- (void)viewDidLoad;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -379,50 +322,6 @@ SWIFT_CLASS("_TtC10GroobeeKit8PushData")
 - (PushData * _Nonnull)setPushMsgType:(NSString * _Nonnull)pushMsgType SWIFT_WARN_UNUSED_RESULT;
 - (PushData * _Nonnull)setPushMsgCnt:(NSString * _Nonnull)pushMsgCnt SWIFT_WARN_UNUSED_RESULT;
 - (PushData * _Nonnull)setSendDtm:(NSString * _Nonnull)sendDtm SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC10GroobeeKit13RequestParams")
-@interface RequestParams : NSObject
-- (NSString * _Nullable)getServiceKey SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getCookieId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getUserId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getDeviceType SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getDeviceCd SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getOsCd SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getMemberId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getScreenId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getActionCd SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getSearchKwd SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getMsgType SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getCampaignKey SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getCampaignTypeCd SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getTrackingId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getOrderNo SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nullable)getAppData SWIFT_WARN_UNUSED_RESULT;
-- (MemberData * _Nullable)getMemberData SWIFT_WARN_UNUSED_RESULT;
-- (NSArray<Goods *> * _Nullable)getGoods SWIFT_WARN_UNUSED_RESULT;
-- (CategoryData * _Nullable)getCategory SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setServiceKey:(NSString * _Nonnull)serviceKey SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setCookieId:(NSString * _Nonnull)cookieId SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setUserId:(NSString * _Nonnull)userId SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setDeviceType:(NSString * _Nonnull)deviceType SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setDeviceCd:(NSString * _Nonnull)deviceCd SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setOsCd:(NSString * _Nonnull)osCd SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setMemberId:(NSString * _Nonnull)memberId;
-- (RequestParams * _Nonnull)setScreenId:(NSString * _Nonnull)screenId SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setActionCd:(NSString * _Nonnull)actionCd;
-- (RequestParams * _Nonnull)setSearchKwd:(NSString * _Nonnull)searchKwd SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setMsgType:(NSString * _Nonnull)msgType SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setCampaignKey:(NSString * _Nonnull)campaignKey SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setCampaignTypeCd:(NSString * _Nonnull)campaignTypeCd SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setTrackingId:(NSString * _Nonnull)trackingId SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setOrderNo:(NSString * _Nonnull)orderNo SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setAppData:(AppData * _Nonnull)appData SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setMemberData:(MemberData * _Nonnull)memberData SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setGoods:(NSArray<Goods *> * _Nonnull)goods SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setCategory:(CategoryData * _Nonnull)category SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -637,7 +536,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
-@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -655,58 +553,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class PushData;
 
 SWIFT_CLASS("_TtC10GroobeeKit7AppData")
 @interface AppData : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (NSString * _Nullable)getPackageName SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getAgreedType SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)getPushOpened SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)getAgreedAP SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)getAgreedAA SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)getAgreedAN SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getToken SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getAdid SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getAppName SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getAppVersion SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getDeviceOS SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getDeviceSDK SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getFirmwareName SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getScreenAct SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getScreenName SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getScreenData SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)getTerMinated SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getIosSessionDtm SWIFT_WARN_UNUSED_RESULT;
-- (double)getLatitude SWIFT_WARN_UNUSED_RESULT;
-- (double)getLongitude SWIFT_WARN_UNUSED_RESULT;
-- (NSArray<PushData *> * _Nullable)getCampaignKeyList SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setPackageName:(NSString * _Nonnull)packageName SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setAgreedType:(NSString * _Nonnull)agreedType SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setPushOpened:(BOOL)pushOpened;
-- (AppData * _Nonnull)setAgreedAP:(BOOL)agreedAP;
-- (AppData * _Nonnull)setAgreedAA:(BOOL)agreedAA;
-- (AppData * _Nonnull)setAgreedAN:(BOOL)agreedAN;
-- (AppData * _Nonnull)setPushToken:(NSString * _Nonnull)token SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setAdid:(NSString * _Nonnull)adid SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setAppName:(NSString * _Nonnull)appName SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setAppVersion:(NSString * _Nonnull)appVersion SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setDeviceOS:(NSString * _Nonnull)deviceOS SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setDeviceSDK:(NSString * _Nonnull)deviceSDK SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setFirmwareName:(NSString * _Nonnull)firmwareName SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setScreenAct:(NSString * _Nonnull)screenAct SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setScreenName:(NSString * _Nonnull)screenName SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setScreenData:(NSString * _Nonnull)screenData SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setTerMinated:(BOOL)terMinated SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setIosSessionDtm:(NSString * _Nonnull)iosSessionDtm SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setLatitude:(double)latitude SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setLongitude:(double)longitude SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nonnull)setCampaignKeyList:(NSArray<PushData *> * _Nonnull)campaignKeyList SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-SWIFT_CLASS("_TtC10GroobeeKit12CategoryData")
-@interface CategoryData : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -735,21 +584,38 @@ SWIFT_CLASS("_TtC10GroobeeKit5Goods")
 @end
 
 @class GroobeeConfig;
+@class NSMutableDictionary;
+@class CLLocation;
+@class WKWebView;
 
-SWIFT_CLASS("_TtC10GroobeeKit7Groobee")
+SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=11.0)
 @interface Groobee : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 + (Groobee * _Nonnull)getInstance SWIFT_WARN_UNUSED_RESULT;
 + (void)configureWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
-- (void)setServicekeyWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
+- (void)setServiceKeyWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
+- (void)setServiceLoginWithMemberId:(NSString * _Nonnull)memberId;
 - (void)setPushAgreeAPWithIsPushAgreedAP:(BOOL)isPushAgreedAP;
 - (void)setPushAgreeAAWithIsPushAgreedAA:(BOOL)isPushAgreedAA;
 - (void)setPushAgreeANWithIsPushAgreedAN:(BOOL)isPushAgreedAN;
 - (void)setPushTokenWithPushToken:(NSString * _Nonnull)pushToken;
-- (void)userNotificationCenterWithUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_AVAILABILITY(ios,introduced=10.0);
-- (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_AVAILABILITY(ios,introduced=10.0);
-- (void)inDirectPushOpened SWIFT_AVAILABILITY(ios,introduced=10.0);
+- (void)userNotificationCenterWithUserInfo:(NSDictionary * _Nonnull)userInfo;
+- (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
+- (void)inDirectPushOpened;
+- (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type;
+- (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setShoppingCartWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setGoodsOrderWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setViewGoodsWithGoods:(Goods * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
+- (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
+- (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
+- (void)setAppLocationInfoWithUserLocation:(CLLocation * _Nonnull)userLocation;
+- (void)setWebViewCookiesWithWebView:(WKWebView * _Nonnull)webView urlRequest:(NSURLRequest * _Nonnull)urlRequest;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class GroobeeConfigBuilder;
@@ -780,36 +646,12 @@ SWIFT_CLASS("_TtCC10GroobeeKit13GroobeeConfig20GroobeeConfigBuilder")
 @class UNNotificationContent;
 @class UNNotification;
 
-SWIFT_CLASS("_TtC10GroobeeKit22GroobeeKitNotification") SWIFT_AVAILABILITY(ios,introduced=11.0)
-@interface GroobeeKitNotification : NSObject
-+ (GroobeeKitNotification * _Nonnull)getInstance SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS("_TtC10GroobeeKit19GroobeeNotification") SWIFT_AVAILABILITY(ios,introduced=11.0)
+@interface GroobeeNotification : NSObject
++ (GroobeeNotification * _Nonnull)getInstance SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)receiveService:(UNNotificationRequest * _Nonnull)request :(UNMutableNotificationContent * _Nonnull)bestAttemptContent withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)receiveContent:(UNNotification * _Nonnull)notification SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC10GroobeeKit10MemberData")
-@interface MemberData : NSObject
-- (NSString * _Nullable)getId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGrade SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)getAge SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGender SWIFT_WARN_UNUSED_RESULT;
-- (MemberData * _Nonnull)setId:(NSString * _Nonnull)id SWIFT_WARN_UNUSED_RESULT;
-- (MemberData * _Nonnull)setGrade:(NSString * _Nonnull)grade SWIFT_WARN_UNUSED_RESULT;
-- (MemberData * _Nonnull)setAge:(NSInteger)age SWIFT_WARN_UNUSED_RESULT;
-- (MemberData * _Nonnull)setGender:(NSString * _Nonnull)gender SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSBundle;
-@class NSCoder;
-
-SWIFT_CLASS("_TtC10GroobeeKit19PopUpViewController")
-@interface PopUpViewController : UIViewController
-- (void)viewDidLoad;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -823,50 +665,6 @@ SWIFT_CLASS("_TtC10GroobeeKit8PushData")
 - (PushData * _Nonnull)setPushMsgType:(NSString * _Nonnull)pushMsgType SWIFT_WARN_UNUSED_RESULT;
 - (PushData * _Nonnull)setPushMsgCnt:(NSString * _Nonnull)pushMsgCnt SWIFT_WARN_UNUSED_RESULT;
 - (PushData * _Nonnull)setSendDtm:(NSString * _Nonnull)sendDtm SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC10GroobeeKit13RequestParams")
-@interface RequestParams : NSObject
-- (NSString * _Nullable)getServiceKey SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getCookieId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getUserId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getDeviceType SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getDeviceCd SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getOsCd SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getMemberId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getScreenId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getActionCd SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getSearchKwd SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getMsgType SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getCampaignKey SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getCampaignTypeCd SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getTrackingId SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getOrderNo SWIFT_WARN_UNUSED_RESULT;
-- (AppData * _Nullable)getAppData SWIFT_WARN_UNUSED_RESULT;
-- (MemberData * _Nullable)getMemberData SWIFT_WARN_UNUSED_RESULT;
-- (NSArray<Goods *> * _Nullable)getGoods SWIFT_WARN_UNUSED_RESULT;
-- (CategoryData * _Nullable)getCategory SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setServiceKey:(NSString * _Nonnull)serviceKey SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setCookieId:(NSString * _Nonnull)cookieId SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setUserId:(NSString * _Nonnull)userId SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setDeviceType:(NSString * _Nonnull)deviceType SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setDeviceCd:(NSString * _Nonnull)deviceCd SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setOsCd:(NSString * _Nonnull)osCd SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setMemberId:(NSString * _Nonnull)memberId;
-- (RequestParams * _Nonnull)setScreenId:(NSString * _Nonnull)screenId SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setActionCd:(NSString * _Nonnull)actionCd;
-- (RequestParams * _Nonnull)setSearchKwd:(NSString * _Nonnull)searchKwd SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setMsgType:(NSString * _Nonnull)msgType SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setCampaignKey:(NSString * _Nonnull)campaignKey SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setCampaignTypeCd:(NSString * _Nonnull)campaignTypeCd SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setTrackingId:(NSString * _Nonnull)trackingId SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setOrderNo:(NSString * _Nonnull)orderNo SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setAppData:(AppData * _Nonnull)appData SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setMemberData:(MemberData * _Nonnull)memberData SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setGoods:(NSArray<Goods *> * _Nonnull)goods SWIFT_WARN_UNUSED_RESULT;
-- (RequestParams * _Nonnull)setCategory:(CategoryData * _Nonnull)category SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
