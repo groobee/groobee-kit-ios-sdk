@@ -18,36 +18,35 @@ public class StickyButtonView {
   public func isShowing() -> Swift.Bool
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class Goods : ObjectiveC.NSObject, Swift.Codable {
+@objc public class Goods : ObjectiveC.NSObject, Swift.Codable {
   public var goodsNm: Swift.String?
   public var goodsCd: Swift.String?
   public var goodsCate: Swift.String?
   public var goodsCateNm: Swift.String?
-  public var goodsAmt: Swift.String?
-  public var goodsPrc: Swift.String?
-  public var goodsSalePrc: Swift.String?
-  public var goodsCnt: Swift.String?
+  public var goodsAmt: Swift.Int
+  public var goodsPrc: Swift.Int
+  public var goodsSalePrc: Swift.Int
+  public var goodsCnt: Swift.Int
   public var goodsImg: Swift.String?
   @objc public func getGoodsNm() -> Swift.String?
   @objc public func getGoodsCd() -> Swift.String?
   @objc public func getGoodsCate() -> Swift.String?
   @objc public func getGoodsCateNm() -> Swift.String?
-  @objc public func getGoodsAmt() -> Swift.String?
-  @objc public func getGoodsPrc() -> Swift.String?
-  @objc public func getGoodsSalePrc() -> Swift.String?
-  @objc public func getGoodsCnt() -> Swift.String?
+  @objc public func getGoodsAmt() -> Swift.Int
+  @objc public func getGoodsPrc() -> Swift.Int
+  @objc public func getGoodsSalePrc() -> Swift.Int
+  @objc public func getGoodsCnt() -> Swift.Int
   @objc public func getGoodsImg() -> Swift.String?
   @objc public func setGoodsNm(_ goodsNm: Swift.String) -> GroobeeKit.Goods
   @objc public func setGoodsCd(_ goodsCd: Swift.String) -> GroobeeKit.Goods
   @objc public func setGoodsCate(_ goodsCate: Swift.String) -> GroobeeKit.Goods
   @objc public func setGoodsCateNm(_ goodsCateNm: Swift.String) -> GroobeeKit.Goods
-  @objc public func setGoodsAmt(_ goodsAmt: Swift.String) -> GroobeeKit.Goods
-  @objc public func setGoodsPrc(_ goodsPrc: Swift.String) -> GroobeeKit.Goods
-  @objc public func setGoodsSalePrc(_ goodsSalePrc: Swift.String) -> GroobeeKit.Goods
-  @objc public func setGoodsCnt(_ goodsCnt: Swift.String) -> GroobeeKit.Goods
+  @objc public func setGoodsAmt(_ goodsAmt: Swift.Int) -> GroobeeKit.Goods
+  @objc public func setGoodsPrc(_ goodsPrc: Swift.Int) -> GroobeeKit.Goods
+  @objc public func setGoodsSalePrc(_ goodsSalePrc: Swift.Int) -> GroobeeKit.Goods
+  @objc public func setGoodsCnt(_ goodsCnt: Swift.Int) -> GroobeeKit.Goods
   @objc public func setGoodsImg(_ goodsImg: Swift.String) -> GroobeeKit.Goods
   @objc deinit
-  @objc override dynamic public init()
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }

@@ -223,21 +223,20 @@ SWIFT_CLASS("_TtC10GroobeeKit5Goods")
 - (NSString * _Nullable)getGoodsCd SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getGoodsCate SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getGoodsCateNm SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGoodsAmt SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGoodsPrc SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGoodsSalePrc SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGoodsCnt SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)getGoodsAmt SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)getGoodsPrc SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)getGoodsSalePrc SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)getGoodsCnt SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getGoodsImg SWIFT_WARN_UNUSED_RESULT;
 - (Goods * _Nonnull)setGoodsNm:(NSString * _Nonnull)goodsNm SWIFT_WARN_UNUSED_RESULT;
 - (Goods * _Nonnull)setGoodsCd:(NSString * _Nonnull)goodsCd SWIFT_WARN_UNUSED_RESULT;
 - (Goods * _Nonnull)setGoodsCate:(NSString * _Nonnull)goodsCate SWIFT_WARN_UNUSED_RESULT;
 - (Goods * _Nonnull)setGoodsCateNm:(NSString * _Nonnull)goodsCateNm SWIFT_WARN_UNUSED_RESULT;
-- (Goods * _Nonnull)setGoodsAmt:(NSString * _Nonnull)goodsAmt SWIFT_WARN_UNUSED_RESULT;
-- (Goods * _Nonnull)setGoodsPrc:(NSString * _Nonnull)goodsPrc SWIFT_WARN_UNUSED_RESULT;
-- (Goods * _Nonnull)setGoodsSalePrc:(NSString * _Nonnull)goodsSalePrc SWIFT_WARN_UNUSED_RESULT;
-- (Goods * _Nonnull)setGoodsCnt:(NSString * _Nonnull)goodsCnt SWIFT_WARN_UNUSED_RESULT;
+- (Goods * _Nonnull)setGoodsAmt:(NSInteger)goodsAmt SWIFT_WARN_UNUSED_RESULT;
+- (Goods * _Nonnull)setGoodsPrc:(NSInteger)goodsPrc SWIFT_WARN_UNUSED_RESULT;
+- (Goods * _Nonnull)setGoodsSalePrc:(NSInteger)goodsSalePrc SWIFT_WARN_UNUSED_RESULT;
+- (Goods * _Nonnull)setGoodsCnt:(NSInteger)goodsCnt SWIFT_WARN_UNUSED_RESULT;
 - (Goods * _Nonnull)setGoodsImg:(NSString * _Nonnull)goodsImg SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class GroobeeConfig;
@@ -577,21 +576,20 @@ SWIFT_CLASS("_TtC10GroobeeKit5Goods")
 - (NSString * _Nullable)getGoodsCd SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getGoodsCate SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getGoodsCateNm SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGoodsAmt SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGoodsPrc SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGoodsSalePrc SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getGoodsCnt SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)getGoodsAmt SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)getGoodsPrc SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)getGoodsSalePrc SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)getGoodsCnt SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getGoodsImg SWIFT_WARN_UNUSED_RESULT;
 - (Goods * _Nonnull)setGoodsNm:(NSString * _Nonnull)goodsNm SWIFT_WARN_UNUSED_RESULT;
 - (Goods * _Nonnull)setGoodsCd:(NSString * _Nonnull)goodsCd SWIFT_WARN_UNUSED_RESULT;
 - (Goods * _Nonnull)setGoodsCate:(NSString * _Nonnull)goodsCate SWIFT_WARN_UNUSED_RESULT;
 - (Goods * _Nonnull)setGoodsCateNm:(NSString * _Nonnull)goodsCateNm SWIFT_WARN_UNUSED_RESULT;
-- (Goods * _Nonnull)setGoodsAmt:(NSString * _Nonnull)goodsAmt SWIFT_WARN_UNUSED_RESULT;
-- (Goods * _Nonnull)setGoodsPrc:(NSString * _Nonnull)goodsPrc SWIFT_WARN_UNUSED_RESULT;
-- (Goods * _Nonnull)setGoodsSalePrc:(NSString * _Nonnull)goodsSalePrc SWIFT_WARN_UNUSED_RESULT;
-- (Goods * _Nonnull)setGoodsCnt:(NSString * _Nonnull)goodsCnt SWIFT_WARN_UNUSED_RESULT;
+- (Goods * _Nonnull)setGoodsAmt:(NSInteger)goodsAmt SWIFT_WARN_UNUSED_RESULT;
+- (Goods * _Nonnull)setGoodsPrc:(NSInteger)goodsPrc SWIFT_WARN_UNUSED_RESULT;
+- (Goods * _Nonnull)setGoodsSalePrc:(NSInteger)goodsSalePrc SWIFT_WARN_UNUSED_RESULT;
+- (Goods * _Nonnull)setGoodsCnt:(NSInteger)goodsCnt SWIFT_WARN_UNUSED_RESULT;
 - (Goods * _Nonnull)setGoodsImg:(NSString * _Nonnull)goodsImg SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class GroobeeConfig;
