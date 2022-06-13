@@ -5,6 +5,7 @@ import AdSupport
 import CoreLocation
 import Foundation
 import MapKit
+import Security
 import Swift
 import UIKit
 import UserNotifications
@@ -248,17 +249,11 @@ public class StyleConstraints {
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public class RuntimeConfigProvider {
-  public init()
+@_hasMissingDesignatedInitializers public class RuntimeConfigProvider {
   public func setRuntimeConfig(groobeeConfig: GroobeeKit.GroobeeConfig)
   public func clean()
   public func getDataString(key: Swift.String) -> Swift.String?
-  public func getDataInt(key: Swift.String) -> Swift.Int
-  public func getDataFloat(key: Swift.String) -> Swift.Float
-  public func getDataBoolean(key: Swift.String) -> Swift.Bool
-  public func getDataDictionary(key: Swift.String) -> Swift.Dictionary<Swift.String, Any>
-  public func getDataStringArray(key: Swift.String) -> [Swift.String]
-  public static func addData(preference: Foundation.UserDefaults, key: Swift.String, value: Any)
+  public static func addData(key: Swift.String, value: Any)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class AppData : Swift.Codable {
