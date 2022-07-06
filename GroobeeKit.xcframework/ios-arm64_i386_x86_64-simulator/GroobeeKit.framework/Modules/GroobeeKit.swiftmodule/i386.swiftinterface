@@ -101,6 +101,7 @@ extension GroobeeServiceManager {
   @objc public func didReceiveRemoteNotification(userInfo: [Swift.AnyHashable : Any])
   @objc public func inDirectPushOpened()
   @objc public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.String, gender: Swift.String, type: Swift.String)
+  @objc public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.String, gender: Swift.String, type: Swift.String, pagr: Swift.String, iagr: Swift.String)
   @objc public func setMemberJoin(memberId: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
   @objc public func setSearchKeyword(searchKwd: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
   @objc public func setShoppingCart(goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
@@ -217,16 +218,24 @@ public class StyleConstraints {
   public var age: Swift.String?
   public var gender: Swift.String?
   public var type: Swift.String?
+  public var pagr: Swift.String?
+  public var iagr: Swift.String?
   public func getId() -> Swift.String?
   public func getGrade() -> Swift.String?
   public func getAge() -> Swift.String?
   public func getGender() -> Swift.String?
   public func getType() -> Swift.String?
+  public func getPagr() -> Swift.String?
+  public func getIagr() -> Swift.String?
   public func setId(_ id: Swift.String) -> GroobeeKit.MemberData
   public func setGrade(_ grade: Swift.String) -> GroobeeKit.MemberData
   public func setAge(_ age: Swift.String) -> GroobeeKit.MemberData
   public func setGender(_ gender: Swift.String) -> GroobeeKit.MemberData
   public func setType(_ type: Swift.String) -> GroobeeKit.MemberData
+  @discardableResult
+  public func setPagr(_ pagr: Swift.String) -> GroobeeKit.MemberData
+  @discardableResult
+  public func setIagr(_ iagr: Swift.String) -> GroobeeKit.MemberData
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
@@ -316,7 +325,7 @@ public class StyleConstraints {
   public static func authAppEtc(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, appName: Swift.String, appVersion: Swift.String, appOSVersion: Swift.String) -> GroobeeKit.RequestParams
   public static func authWebViewCookies(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, webCookieId: Swift.String, webUserId: Swift.String) -> GroobeeKit.RequestParams
   public static func servicePushMessage(serviceKey: Swift.String, actionCd: Swift.String, cookieId: Swift.String, userId: Swift.String, isPushOpened: Swift.Bool? = nil, campaignKeyList: [GroobeeKit.PushData], memberId: Swift.String?, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
-  public static func serviceUserInfo(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, id: Swift.String, grade: Swift.String, age: Swift.String, gender: Swift.String, type: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
+  public static func serviceUserInfo(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, id: Swift.String, grade: Swift.String, age: Swift.String, gender: Swift.String, type: Swift.String, pagr: Swift.String? = nil, iagr: Swift.String? = nil, memberId: Swift.String?) -> GroobeeKit.RequestParams
   public static func serviceMemberJoin(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String, screenId: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
   public static func serviceSearchKeyword(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, searchKwd: Swift.String, screenId: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
   public static func serviceShoppingCart(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams

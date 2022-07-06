@@ -253,6 +253,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
 - (void)inDirectPushOpened;
 - (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type;
+- (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type pagr:(NSString * _Nonnull)pagr iagr:(NSString * _Nonnull)iagr;
 - (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setShoppingCartWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
@@ -601,6 +602,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
 - (void)inDirectPushOpened;
 - (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type;
+- (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type pagr:(NSString * _Nonnull)pagr iagr:(NSString * _Nonnull)iagr;
 - (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setShoppingCartWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
@@ -949,6 +951,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
 - (void)inDirectPushOpened;
 - (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type;
+- (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type pagr:(NSString * _Nonnull)pagr iagr:(NSString * _Nonnull)iagr;
 - (void)setMemberJoinWithMemberId:(NSString * _Nonnull)memberId screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setSearchKeywordWithSearchKwd:(NSString * _Nonnull)searchKwd screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setShoppingCartWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
