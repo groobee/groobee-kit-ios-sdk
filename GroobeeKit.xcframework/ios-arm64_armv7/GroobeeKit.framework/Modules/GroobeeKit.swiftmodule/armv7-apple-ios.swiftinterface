@@ -92,7 +92,7 @@ extension GroobeeServiceManager {
   @objc public static func getInstance() -> GroobeeKit.Groobee
   @objc public static func configure(groobeeConfig: GroobeeKit.GroobeeConfig?)
   @objc public func setServiceKey(groobeeConfig: GroobeeKit.GroobeeConfig?)
-  @objc public func setServiceLogin(memberId: Swift.String)
+  @objc public func setServiceLogin(memberId: Swift.String?)
   @objc public func setPushAgreeAP(isPushAgreedAP: Swift.Bool)
   @objc public func setPushAgreeAA(isPushAgreedAA: Swift.Bool)
   @objc public func setPushAgreeAN(isPushAgreedAN: Swift.Bool)

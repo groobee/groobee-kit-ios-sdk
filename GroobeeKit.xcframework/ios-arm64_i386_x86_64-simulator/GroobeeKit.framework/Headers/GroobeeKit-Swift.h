@@ -244,7 +244,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 + (Groobee * _Nonnull)getInstance SWIFT_WARN_UNUSED_RESULT;
 + (void)configureWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
 - (void)setServiceKeyWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
-- (void)setServiceLoginWithMemberId:(NSString * _Nonnull)memberId;
+- (void)setServiceLoginWithMemberId:(NSString * _Nullable)memberId;
 - (void)setPushAgreeAPWithIsPushAgreedAP:(BOOL)isPushAgreedAP;
 - (void)setPushAgreeAAWithIsPushAgreedAA:(BOOL)isPushAgreedAA;
 - (void)setPushAgreeANWithIsPushAgreedAN:(BOOL)isPushAgreedAN;
@@ -593,7 +593,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 + (Groobee * _Nonnull)getInstance SWIFT_WARN_UNUSED_RESULT;
 + (void)configureWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
 - (void)setServiceKeyWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
-- (void)setServiceLoginWithMemberId:(NSString * _Nonnull)memberId;
+- (void)setServiceLoginWithMemberId:(NSString * _Nullable)memberId;
 - (void)setPushAgreeAPWithIsPushAgreedAP:(BOOL)isPushAgreedAP;
 - (void)setPushAgreeAAWithIsPushAgreedAA:(BOOL)isPushAgreedAA;
 - (void)setPushAgreeANWithIsPushAgreedAN:(BOOL)isPushAgreedAN;
@@ -942,7 +942,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 + (Groobee * _Nonnull)getInstance SWIFT_WARN_UNUSED_RESULT;
 + (void)configureWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
 - (void)setServiceKeyWithGroobeeConfig:(GroobeeConfig * _Nullable)groobeeConfig;
-- (void)setServiceLoginWithMemberId:(NSString * _Nonnull)memberId;
+- (void)setServiceLoginWithMemberId:(NSString * _Nullable)memberId;
 - (void)setPushAgreeAPWithIsPushAgreedAP:(BOOL)isPushAgreedAP;
 - (void)setPushAgreeAAWithIsPushAgreedAA:(BOOL)isPushAgreedAA;
 - (void)setPushAgreeANWithIsPushAgreedAN:(BOOL)isPushAgreedAN;
