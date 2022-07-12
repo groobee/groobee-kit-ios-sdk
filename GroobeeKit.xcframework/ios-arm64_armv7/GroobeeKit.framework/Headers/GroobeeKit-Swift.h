@@ -317,6 +317,17 @@ SWIFT_CLASS("_TtC10GroobeeKit19GroobeeNotification") SWIFT_AVAILABILITY(ios,intr
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSURLSession;
+@class NSURLAuthenticationChallenge;
+@class NSURLCredential;
+
+SWIFT_CLASS("_TtC10GroobeeKit21GroobeeServiceManager") SWIFT_AVAILABILITY(ios,introduced=10.0)
+@interface GroobeeServiceManager : NSObject <NSURLSessionDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 
 SWIFT_CLASS("_TtC10GroobeeKit8PushData")
 @interface PushData : NSObject
@@ -665,6 +676,17 @@ SWIFT_CLASS("_TtC10GroobeeKit19GroobeeNotification") SWIFT_AVAILABILITY(ios,intr
 - (BOOL)receiveContent:(UNNotification * _Nonnull)notification SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+@class NSURLSession;
+@class NSURLAuthenticationChallenge;
+@class NSURLCredential;
+
+SWIFT_CLASS("_TtC10GroobeeKit21GroobeeServiceManager") SWIFT_AVAILABILITY(ios,introduced=10.0)
+@interface GroobeeServiceManager : NSObject <NSURLSessionDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 
 SWIFT_CLASS("_TtC10GroobeeKit8PushData")
