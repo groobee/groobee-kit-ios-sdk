@@ -144,7 +144,6 @@ public class GroobeeServiceManager : ObjectiveC.NSObject, Foundation.URLSessionD
   public static var PATTERN_MATCHES_URL: Swift.String
   public static func sendSyncRequest(_ url: Swift.String, _ request: Swift.String) -> Swift.Bool
   public static func sendRequest(_ url: Swift.String, _ request: Swift.String, screenId: Swift.String? = nil)
-  @objc public func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
   @objc deinit
   @objc override dynamic public init()
 }
