@@ -96,6 +96,8 @@ extension GroobeeServiceManager {
   @objc public func setPushAgreeAP(isPushAgreedAP: Swift.Bool)
   @objc public func setPushAgreeAA(isPushAgreedAA: Swift.Bool)
   @objc public func setPushAgreeAN(isPushAgreedAN: Swift.Bool)
+  @objc public func syncMemberAgreed(memberId: Swift.String)
+  @objc public func getSyncMemberAgreed(memberId: Swift.String) -> GroobeeKit.Agreeds?
   @objc public func setPushToken(pushToken: Swift.String)
   @objc public func userNotificationCenter(userInfo: [Swift.AnyHashable : Any])
   @objc public func didReceiveRemoteNotification(userInfo: [Swift.AnyHashable : Any])
@@ -143,6 +145,7 @@ public struct MessageText : Swift.Codable {
 public class GroobeeServiceManager : ObjectiveC.NSObject, Foundation.URLSessionDelegate {
   public static var PATTERN_MATCHES_URL: Swift.String
   public static func sendSyncRequest(_ url: Swift.String, _ request: Swift.String) -> Swift.Bool
+  public static func sendSyncPushRequest(_ url: Swift.String, _ request: Swift.String) -> Swift.String
   public static func sendRequest(_ url: Swift.String, _ request: Swift.String, screenId: Swift.String? = nil)
   @objc deinit
   @objc override dynamic public init()
@@ -241,6 +244,14 @@ public class StyleConstraints {
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
+@objc public class Agreeds : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var agreedAP: Swift.Bool
+  @objc public var agreedAA: Swift.Bool
+  @objc public var agreedAN: Swift.Bool
+  @objc deinit
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
 @_inheritsConvenienceInitializers @objc public class PushData : ObjectiveC.NSObject, Swift.Codable {
   public var campaignKey: Swift.String?
   public var pushMsgType: Swift.String?
@@ -321,6 +332,7 @@ public class StyleConstraints {
   public static func authServiceKey(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, packageName: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
   public static func authServiceLogin(serviceKey: Swift.String, cookieId: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
   public static func authPushAgreed(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, isAgreed: Swift.Bool, agreedType: Swift.String) -> GroobeeKit.RequestParams
+  public static func authSyncMemberAgreed(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String) -> GroobeeKit.RequestParams
   public static func authPushToken(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, pushToken: Swift.String) -> GroobeeKit.RequestParams
   public static func authAppAdId(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, adId: Swift.String) -> GroobeeKit.RequestParams
   public static func authAppEtc(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, appName: Swift.String, appVersion: Swift.String, appOSVersion: Swift.String) -> GroobeeKit.RequestParams
