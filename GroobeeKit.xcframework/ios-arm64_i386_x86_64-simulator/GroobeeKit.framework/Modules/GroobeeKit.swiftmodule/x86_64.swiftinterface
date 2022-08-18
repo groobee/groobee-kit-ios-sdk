@@ -331,7 +331,7 @@ public class StyleConstraints {
 @_hasMissingDesignatedInitializers public class ModelBuilder {
   public static func authServiceKey(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, packageName: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
   public static func authServiceLogin(serviceKey: Swift.String, cookieId: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
-  public static func authPushAgreed(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, isAgreed: Swift.Bool, agreedType: Swift.String) -> GroobeeKit.RequestParams
+  public static func authPushAgreed(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, isAgreed: Swift.Bool, agreedType: Swift.String) -> GroobeeKit.RequestParams
   public static func authSyncMemberAgreed(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String) -> GroobeeKit.RequestParams
   public static func authPushToken(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, pushToken: Swift.String) -> GroobeeKit.RequestParams
   public static func authAppAdId(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, adId: Swift.String) -> GroobeeKit.RequestParams
