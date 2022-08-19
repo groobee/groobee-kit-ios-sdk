@@ -97,7 +97,7 @@ extension GroobeeServiceManager {
   @objc public func setPushAgreeAA(isPushAgreedAA: Swift.Bool)
   @objc public func setPushAgreeAN(isPushAgreedAN: Swift.Bool)
   @objc public func syncMemberAgreed(memberId: Swift.String)
-  @objc public func getSyncMemberAgreed(memberId: Swift.String) -> GroobeeKit.Agreeds?
+  @objc public func getPushAgreed(memberId: Swift.String) -> GroobeeKit.Agreeds?
   @objc public func setPushToken(pushToken: Swift.String)
   @objc public func userNotificationCenter(userInfo: [Swift.AnyHashable : Any])
   @objc public func didReceiveRemoteNotification(userInfo: [Swift.AnyHashable : Any])

@@ -257,7 +257,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setPushAgreeAAWithIsPushAgreedAA:(BOOL)isPushAgreedAA;
 - (void)setPushAgreeANWithIsPushAgreedAN:(BOOL)isPushAgreedAN;
 - (void)syncMemberAgreedWithMemberId:(NSString * _Nonnull)memberId;
-- (Agreeds * _Nullable)getSyncMemberAgreedWithMemberId:(NSString * _Nonnull)memberId SWIFT_WARN_UNUSED_RESULT;
+- (Agreeds * _Nullable)getPushAgreedWithMemberId:(NSString * _Nonnull)memberId SWIFT_WARN_UNUSED_RESULT;
 - (void)setPushTokenWithPushToken:(NSString * _Nonnull)pushToken;
 - (void)userNotificationCenterWithUserInfo:(NSDictionary * _Nonnull)userInfo;
 - (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
@@ -623,7 +623,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setPushAgreeAAWithIsPushAgreedAA:(BOOL)isPushAgreedAA;
 - (void)setPushAgreeANWithIsPushAgreedAN:(BOOL)isPushAgreedAN;
 - (void)syncMemberAgreedWithMemberId:(NSString * _Nonnull)memberId;
-- (Agreeds * _Nullable)getSyncMemberAgreedWithMemberId:(NSString * _Nonnull)memberId SWIFT_WARN_UNUSED_RESULT;
+- (Agreeds * _Nullable)getPushAgreedWithMemberId:(NSString * _Nonnull)memberId SWIFT_WARN_UNUSED_RESULT;
 - (void)setPushTokenWithPushToken:(NSString * _Nonnull)pushToken;
 - (void)userNotificationCenterWithUserInfo:(NSDictionary * _Nonnull)userInfo;
 - (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
