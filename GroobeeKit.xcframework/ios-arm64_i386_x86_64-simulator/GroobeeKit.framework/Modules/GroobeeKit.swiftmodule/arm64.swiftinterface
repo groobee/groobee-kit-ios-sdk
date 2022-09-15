@@ -275,6 +275,7 @@ public class StyleConstraints {
   public func clean()
   public func getDataString(key: Swift.String) -> Swift.String?
   public static func addData(key: Swift.String, value: Any)
+  public static func delete(key: Swift.String)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class AppData : Swift.Codable {
