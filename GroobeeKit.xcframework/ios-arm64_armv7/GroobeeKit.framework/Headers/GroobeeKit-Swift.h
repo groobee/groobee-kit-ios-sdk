@@ -270,6 +270,9 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setGoodsOrderWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setViewGoodsWithGoods:(Goods * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (NSArray<Goods *> * _Nonnull)getRecommendGoodsWithCampaignKey:(NSString * _Nonnull)campaignKey timeout:(double)timeout SWIFT_WARN_UNUSED_RESULT;
+- (void)setShowRecommendGoodsWithGoods:(NSArray<Goods *> * _Nonnull)goods;
+- (void)setClickRecommendGoodsWithGoods:(Goods * _Nonnull)goods;
 - (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
@@ -636,6 +639,9 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setGoodsOrderWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setViewGoodsWithGoods:(Goods * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (NSArray<Goods *> * _Nonnull)getRecommendGoodsWithCampaignKey:(NSString * _Nonnull)campaignKey timeout:(double)timeout SWIFT_WARN_UNUSED_RESULT;
+- (void)setShowRecommendGoodsWithGoods:(NSArray<Goods *> * _Nonnull)goods;
+- (void)setClickRecommendGoodsWithGoods:(Goods * _Nonnull)goods;
 - (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
