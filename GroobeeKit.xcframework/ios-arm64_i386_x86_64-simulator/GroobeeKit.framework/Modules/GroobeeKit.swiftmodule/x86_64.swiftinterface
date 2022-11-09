@@ -92,6 +92,7 @@ extension GroobeeServiceManager {
   public var runtimeConfigProvider: GroobeeKit.RuntimeConfigProvider?
   @objc public static func getInstance() -> GroobeeKit.Groobee
   @objc public static func configure(groobeeConfig: GroobeeKit.GroobeeConfig?)
+  public func setIsAuth(isAuth: Swift.Bool)
   @objc public func setServiceKey(groobeeConfig: GroobeeKit.GroobeeConfig?)
   @objc public func setServiceLogin(memberId: Swift.String?)
   @objc public func setPushAgreeAP(isPushAgreedAP: Swift.Bool)
@@ -148,7 +149,7 @@ public struct MessageText : Swift.Codable {
 @objc @_inheritsConvenienceInitializers @available(iOS 10.0, *)
 public class GroobeeServiceManager : ObjectiveC.NSObject, Foundation.URLSessionDelegate {
   public static var PATTERN_MATCHES_URL: Swift.String
-  public static func sendSyncRequest(_ url: Swift.String, _ request: Swift.String) -> Swift.Bool
+  public static func sendSyncRequest(_ url: Swift.String, _ request: Swift.String)
   public static func sendSyncPushRequest(_ url: Swift.String, _ request: Swift.String) -> Swift.String
   public static func sendRequest(_ url: Swift.String, _ request: Swift.String, screenId: Swift.String? = nil)
   public static func sendRequestTimeout(_ url: Swift.String, _ request: Swift.String, _ timeout: Swift.Double) -> [GroobeeKit.Goods]
@@ -304,6 +305,7 @@ public class StyleConstraints {
   public func getIosSessionDtm() -> Swift.String?
   public func getLatitude() -> Swift.Double
   public func getLongitude() -> Swift.Double
+  public func getGroobeeSDK() -> Swift.String?
   public func getCampaignKeyList() -> [GroobeeKit.PushData]?
   public func setPackageName(_ packageName: Swift.String) -> GroobeeKit.AppData
   public func setAgreedType(_ agreedType: Swift.String) -> GroobeeKit.AppData
@@ -329,6 +331,7 @@ public class StyleConstraints {
   public func setIosSessionDtm(_ iosSessionDtm: Swift.String) -> GroobeeKit.AppData
   public func setLatitude(_ latitude: Swift.Double) -> GroobeeKit.AppData
   public func setLongitude(_ longitude: Swift.Double) -> GroobeeKit.AppData
+  public func setGroobeeSDK(_ groobeeSDK: Swift.String) -> GroobeeKit.AppData
   public func setCampaignKeyList(_ campaignKeyList: [GroobeeKit.PushData]) -> GroobeeKit.AppData
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
