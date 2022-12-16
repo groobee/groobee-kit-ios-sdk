@@ -80,6 +80,7 @@ public typealias DetectClickedButton = () -> Swift.Void
 extension GroobeeServiceManager {
   public static func responseService(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any])
   public static func responseRecommendGoods(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any]) -> [GroobeeKit.Goods]
+  public static func responseRecommendGoods(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any], recommendGoods: GroobeeKit.ResponseGoods)
   public static func responseInAppMessage(screenId: Swift.String?, response: [Swift.String : Any])
 }
 @_hasMissingDesignatedInitializers public class UrlUtils {
@@ -100,6 +101,7 @@ extension GroobeeServiceManager {
   @objc public func setPushAgreeAN(isPushAgreedAN: Swift.Bool)
   @objc public func syncMemberAgreed(memberId: Swift.String)
   @objc public func getPushAgreed(memberId: Swift.String) -> GroobeeKit.Agreeds?
+  @objc public func getPushAgreed(memberId: Swift.String, responseAgreeds: GroobeeKit.ResponseAgreeds)
   @objc public func setPushToken(pushToken: Swift.String)
   @objc public func userNotificationCenter(userInfo: [Swift.AnyHashable : Any])
   @objc public func didReceiveRemoteNotification(userInfo: [Swift.AnyHashable : Any])
@@ -113,6 +115,7 @@ extension GroobeeServiceManager {
   @objc public func setGoodsOrderComplete(orderNo: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
   @objc public func setViewGoods(goods: GroobeeKit.Goods, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
   @objc public func getRecommendGoods(campaignKey: Swift.String, timeout: Swift.Double) -> [GroobeeKit.Goods]
+  @objc public func getRecommendGoods(campaignKey: Swift.String, responseGoods: GroobeeKit.ResponseGoods)
   @objc public func setShowRecommendGoods(goods: [GroobeeKit.Goods])
   @objc public func setClickRecommendGoods(goods: GroobeeKit.Goods)
   @objc public func setCategory(cateCd: Swift.String, cateNm: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
@@ -151,8 +154,10 @@ public class GroobeeServiceManager : ObjectiveC.NSObject, Foundation.URLSessionD
   public static var PATTERN_MATCHES_URL: Swift.String
   public static func sendSyncRequest(_ url: Swift.String, _ request: Swift.String)
   public static func sendSyncPushRequest(_ url: Swift.String, _ request: Swift.String) -> Swift.String
+  public static func sendAsyncPushRequest(_ url: Swift.String, _ request: Swift.String, _ responseAgreeds: GroobeeKit.ResponseAgreeds)
   public static func sendRequest(_ url: Swift.String, _ request: Swift.String, screenId: Swift.String? = nil)
   public static func sendRequestTimeout(_ url: Swift.String, _ request: Swift.String, _ timeout: Swift.Double) -> [GroobeeKit.Goods]
+  public static func sendGoodsRequest(_ url: Swift.String, _ request: Swift.String, _ recommendGoods: GroobeeKit.ResponseGoods)
   @objc deinit
   @objc override dynamic public init()
 }
@@ -172,6 +177,10 @@ public class PopUpView {
   public func dismiss()
   public func isShowing() -> Swift.Bool
   @objc deinit
+}
+@objc public protocol ResponseAgreeds {
+  @objc func onSuccess(agreeds: GroobeeKit.Agreeds)
+  @objc func onFailed(exceptionMsg: Swift.String)
 }
 @objc public class GroobeeConfig : ObjectiveC.NSObject {
   @objc public init(builder: GroobeeKit.GroobeeConfig.GroobeeConfigBuilder)
@@ -425,6 +434,10 @@ public class StyleConstraints {
   @objc deinit
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public protocol ResponseGoods {
+  @objc func onSuccess(goods: [GroobeeKit.Goods])
+  @objc func onFailed(exceptionMsg: Swift.String)
 }
 @_inheritsConvenienceInitializers @available(iOS 10.0, *)
 @objc open class GroobeeNotification : ObjectiveC.NSObject {
