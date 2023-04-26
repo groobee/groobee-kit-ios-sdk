@@ -271,15 +271,15 @@ public class StyleConstraints {
   public var campaignKey: Swift.String?
   public var pushMsgType: Swift.String?
   public var pushMsgCnt: Swift.String?
-  public var sendDtm: Swift.String?
+  public var pushSendDtm: Swift.String?
   @objc public func getCampaignKey() -> Swift.String?
   @objc public func getPushMsgType() -> Swift.String?
   @objc public func getPushMsgCnt() -> Swift.String?
-  @objc public func getSendDtm() -> Swift.String?
+  @objc public func getPushSendDtm() -> Swift.String?
   @objc public func setCampaignKey(_ campaignKey: Swift.String) -> GroobeeKit.PushData
   @objc public func setPushMsgType(_ pushMsgType: Swift.String) -> GroobeeKit.PushData
   @objc public func setPushMsgCnt(_ pushMsgCnt: Swift.String) -> GroobeeKit.PushData
-  @objc public func setSendDtm(_ sendDtm: Swift.String) -> GroobeeKit.PushData
+  @objc public func setPushSendDtm(_ pushSendDtm: Swift.String) -> GroobeeKit.PushData
   @objc deinit
   @objc override dynamic public init()
   required public init(from decoder: Swift.Decoder) throws

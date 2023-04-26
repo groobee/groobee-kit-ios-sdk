@@ -347,11 +347,11 @@ SWIFT_CLASS("_TtC10GroobeeKit8PushData")
 - (NSString * _Nullable)getCampaignKey SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getPushMsgType SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getPushMsgCnt SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getSendDtm SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getPushSendDtm SWIFT_WARN_UNUSED_RESULT;
 - (PushData * _Nonnull)setCampaignKey:(NSString * _Nonnull)campaignKey SWIFT_WARN_UNUSED_RESULT;
 - (PushData * _Nonnull)setPushMsgType:(NSString * _Nonnull)pushMsgType SWIFT_WARN_UNUSED_RESULT;
 - (PushData * _Nonnull)setPushMsgCnt:(NSString * _Nonnull)pushMsgCnt SWIFT_WARN_UNUSED_RESULT;
-- (PushData * _Nonnull)setSendDtm:(NSString * _Nonnull)sendDtm SWIFT_WARN_UNUSED_RESULT;
+- (PushData * _Nonnull)setPushSendDtm:(NSString * _Nonnull)pushSendDtm SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -734,11 +734,11 @@ SWIFT_CLASS("_TtC10GroobeeKit8PushData")
 - (NSString * _Nullable)getCampaignKey SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getPushMsgType SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getPushMsgCnt SWIFT_WARN_UNUSED_RESULT;
-- (NSString * _Nullable)getSendDtm SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getPushSendDtm SWIFT_WARN_UNUSED_RESULT;
 - (PushData * _Nonnull)setCampaignKey:(NSString * _Nonnull)campaignKey SWIFT_WARN_UNUSED_RESULT;
 - (PushData * _Nonnull)setPushMsgType:(NSString * _Nonnull)pushMsgType SWIFT_WARN_UNUSED_RESULT;
 - (PushData * _Nonnull)setPushMsgCnt:(NSString * _Nonnull)pushMsgCnt SWIFT_WARN_UNUSED_RESULT;
-- (PushData * _Nonnull)setSendDtm:(NSString * _Nonnull)sendDtm SWIFT_WARN_UNUSED_RESULT;
+- (PushData * _Nonnull)setPushSendDtm:(NSString * _Nonnull)pushSendDtm SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
