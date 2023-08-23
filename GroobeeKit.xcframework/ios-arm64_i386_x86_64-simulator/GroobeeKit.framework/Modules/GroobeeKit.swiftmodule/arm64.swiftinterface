@@ -152,7 +152,7 @@ public struct MessageText : Swift.Codable {
 @objc @_inheritsConvenienceInitializers @available(iOS 10.0, *)
 public class GroobeeServiceManager : ObjectiveC.NSObject, Foundation.URLSessionDelegate {
   public static var PATTERN_MATCHES_URL: Swift.String
-  public static func sendSyncRequest(_ url: Swift.String, _ request: Swift.String)
+  public static func sendAsyncRequest(_ url: Swift.String, _ request: Swift.String)
   public static func sendSyncPushRequest(_ url: Swift.String, _ request: Swift.String) -> Swift.String
   public static func sendAsyncPushRequest(_ url: Swift.String, _ request: Swift.String, _ responseAgreeds: GroobeeKit.ResponseAgreeds)
   public static func sendRequest(_ url: Swift.String, _ request: Swift.String, screenId: Swift.String? = nil)
@@ -348,11 +348,10 @@ public class StyleConstraints {
 }
 @_hasMissingDesignatedInitializers public class ModelBuilder {
   public static func authServiceKey(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, packageName: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
-  public static func authServiceLogin(serviceKey: Swift.String, cookieId: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
+  public static func authServiceLogin(serviceKey: Swift.String, cookieId: Swift.String, memberId: Swift.String?, userId: Swift.String?) -> GroobeeKit.RequestParams
   public static func authPushAgreed(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, isAgreed: Swift.Bool, agreedType: Swift.String) -> GroobeeKit.RequestParams
   public static func authSyncMemberAgreed(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String) -> GroobeeKit.RequestParams
   public static func authPushToken(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, pushToken: Swift.String) -> GroobeeKit.RequestParams
-  public static func authAppAdId(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, adId: Swift.String) -> GroobeeKit.RequestParams
   public static func authAppEtc(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, appName: Swift.String, appVersion: Swift.String, appOSVersion: Swift.String) -> GroobeeKit.RequestParams
   public static func authWebViewCookies(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, webCookieId: Swift.String, webUserId: Swift.String) -> GroobeeKit.RequestParams
   public static func servicePushMessage(serviceKey: Swift.String, actionCd: Swift.String, cookieId: Swift.String, userId: Swift.String, isPushOpened: Swift.Bool? = nil, campaignKeyList: [GroobeeKit.PushData], memberId: Swift.String?, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
@@ -401,6 +400,7 @@ public class StyleConstraints {
   public func getRecentGoodsList() -> [[Swift.String]]?
   public func setServiceKey(_ serviceKey: Swift.String) -> GroobeeKit.RequestParams
   public func setCookieId(_ cookieId: Swift.String) -> GroobeeKit.RequestParams
+  @discardableResult
   public func setUserId(_ userId: Swift.String) -> GroobeeKit.RequestParams
   public func setDeviceType(_ deviceType: Swift.String) -> GroobeeKit.RequestParams
   public func setDeviceCd(_ deviceCd: Swift.String) -> GroobeeKit.RequestParams
