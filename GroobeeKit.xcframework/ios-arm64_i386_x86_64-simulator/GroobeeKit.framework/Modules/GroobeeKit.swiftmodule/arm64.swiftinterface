@@ -93,6 +93,8 @@ extension GroobeeServiceManager {
   public var runtimeConfigProvider: GroobeeKit.RuntimeConfigProvider?
   @objc public static func getInstance() -> GroobeeKit.Groobee
   @objc public static func configure(groobeeConfig: GroobeeKit.GroobeeConfig?)
+  public func allowSyncWebCookies()
+  @objc public func setAppBundleInfo()
   public func setIsAuth(isAuth: Swift.Bool)
   @objc public func setServiceKey(groobeeConfig: GroobeeKit.GroobeeConfig?)
   @objc public func setServiceLogin(memberId: Swift.String?)
