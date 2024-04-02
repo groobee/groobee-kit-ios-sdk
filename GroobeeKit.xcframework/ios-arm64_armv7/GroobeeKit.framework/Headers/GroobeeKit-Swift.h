@@ -193,6 +193,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -265,6 +266,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setPushTokenWithPushToken:(NSString * _Nonnull)pushToken;
 - (void)userNotificationCenterWithUserInfo:(NSDictionary * _Nonnull)userInfo;
 - (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
+- (BOOL)handleGroobeeRemoteMessageWithUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (void)inDirectPushOpened;
 - (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type;
 - (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type pagr:(NSString * _Nonnull)pagr iagr:(NSString * _Nonnull)iagr;
@@ -281,6 +283,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setCustomEventWithEventKey:(NSString * _Nonnull)eventKey eventValue:(NSString * _Nonnull)eventValue;
 - (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
 - (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
 - (void)setAppLocationInfoWithUserLocation:(CLLocation * _Nonnull)userLocation;
@@ -379,6 +382,12 @@ SWIFT_PROTOCOL("_TtP10GroobeeKit13ResponseGoods_")
 
 @interface NSURLSession (SWIFT_EXTENSION(GroobeeKit))
 + (void)downloadImageWithUrl:(NSURL * _Nonnull)url withCompletionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler;
+@end
+
+
+SWIFT_CLASS("_TtC10GroobeeKit8UrlUtils")
+@interface UrlUtils : UIApplication
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #if __has_attribute(external_source_symbol)
@@ -581,6 +590,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -653,6 +663,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setPushTokenWithPushToken:(NSString * _Nonnull)pushToken;
 - (void)userNotificationCenterWithUserInfo:(NSDictionary * _Nonnull)userInfo;
 - (void)didReceiveRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
+- (BOOL)handleGroobeeRemoteMessageWithUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (void)inDirectPushOpened;
 - (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type;
 - (void)setUserInfoWithId:(NSString * _Nonnull)id grade:(NSString * _Nonnull)grade age:(NSString * _Nonnull)age gender:(NSString * _Nonnull)gender type:(NSString * _Nonnull)type pagr:(NSString * _Nonnull)pagr iagr:(NSString * _Nonnull)iagr;
@@ -669,6 +680,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
+- (void)setCustomEventWithEventKey:(NSString * _Nonnull)eventKey eventValue:(NSString * _Nonnull)eventValue;
 - (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
 - (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
 - (void)setAppLocationInfoWithUserLocation:(CLLocation * _Nonnull)userLocation;
@@ -767,6 +779,12 @@ SWIFT_PROTOCOL("_TtP10GroobeeKit13ResponseGoods_")
 
 @interface NSURLSession (SWIFT_EXTENSION(GroobeeKit))
 + (void)downloadImageWithUrl:(NSURL * _Nonnull)url withCompletionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler;
+@end
+
+
+SWIFT_CLASS("_TtC10GroobeeKit8UrlUtils")
+@interface UrlUtils : UIApplication
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #if __has_attribute(external_source_symbol)
