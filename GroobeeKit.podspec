@@ -1,4 +1,4 @@
- #
+   #
 # Be sure to run `pod lib lint ${POD_NAME}.podspec' to ensure this is a
 # valid spec before submitting.
 #
@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GroobeeKit'
-  s.version          = '1.0.34'
+  s.version          = '1.0.36'
   s.summary          = 'GroobeeKit Framework Library'
 
 # This description is used to generate tags and improve search results.
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'http://plateer.com'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'Copyright', :file => <<-LICENSE
+  s.license          = { :type => 'Copyright', :text => <<-LICENSE
                           Copyright 2021 All Rights Reserved By Groobee
                           LICENSE
                         }
