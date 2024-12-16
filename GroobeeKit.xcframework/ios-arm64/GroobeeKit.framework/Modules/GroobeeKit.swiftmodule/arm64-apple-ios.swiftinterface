@@ -94,7 +94,7 @@ public typealias DetectClickedButton = () -> Swift.Void
 @available(iOS 10.0, *)
 extension GroobeeKit.GroobeeServiceManager {
   public static func responseService(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any])
-  public static func responseRecommendGoods(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any]) -> [GroobeeKit.Goods]
+  public static func responseRecommendGoods(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any]) -> GroobeeKit.ArtificialRecommend
   public static func responseRecommendGoods(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any], recommendGoods: any GroobeeKit.ResponseGoods)
   public static func responseInAppMessage(screenId: Swift.String?, response: [Swift.String : Any])
 }
@@ -132,10 +132,10 @@ extension GroobeeKit.GroobeeServiceManager {
   @objc public func setGoodsOrder(goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
   @objc public func setGoodsOrderComplete(orderNo: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
   @objc public func setViewGoods(goods: GroobeeKit.Goods, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
-  @objc public func getRecommendGoods(campaignKey: Swift.String, timeout: Swift.Double) -> [GroobeeKit.Goods]
+  @objc public func getRecommendGoods(campaignKey: Swift.String, timeout: Swift.Double) -> GroobeeKit.ArtificialRecommend
   @objc public func getRecommendGoods(campaignKey: Swift.String, responseGoods: any GroobeeKit.ResponseGoods)
-  @objc public func setShowRecommendGoods(goods: [GroobeeKit.Goods])
-  @objc public func setClickRecommendGoods(goods: GroobeeKit.Goods)
+  @objc public func setShowRecommendGoods(goods: [GroobeeKit.Goods], campaignKey: Swift.String, algorithmCd: Swift.String, requestId: Swift.String)
+  @objc public func setClickRecommendGoods(goods: GroobeeKit.Goods, campaignKey: Swift.String, algorithmCd: Swift.String, requestId: Swift.String)
   @objc public func setCategory(cateCd: Swift.String, cateNm: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
   @objc public func setCustomerData(customData: Foundation.NSMutableDictionary)
   @objc public func setScreenData(screenName: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
@@ -175,7 +175,7 @@ public class GroobeeServiceManager : ObjectiveC.NSObject, Foundation.URLSessionD
   public static func sendSyncPushRequest(_ url: Swift.String, _ request: Swift.String) -> Swift.String
   public static func sendAsyncPushRequest(_ url: Swift.String, _ request: Swift.String, _ responseAgreeds: any GroobeeKit.ResponseAgreeds)
   public static func sendRequest(_ url: Swift.String, _ request: Swift.String, screenId: Swift.String? = nil)
-  public static func sendRequestTimeout(_ url: Swift.String, _ request: Swift.String, _ timeout: Swift.Double) -> [GroobeeKit.Goods]
+  public static func sendRequestTimeout(_ url: Swift.String, _ request: Swift.String, _ timeout: Swift.Double) -> GroobeeKit.ArtificialRecommend
   public static func sendGoodsRequest(_ url: Swift.String, _ request: Swift.String, _ recommendGoods: any GroobeeKit.ResponseGoods)
   @objc override dynamic public init()
   @objc deinit
@@ -395,8 +395,8 @@ public class StyleConstraints {
   public static func serviceAppLocation(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, latitude: Swift.Double, longitude: Swift.Double, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
   public static func statsDI(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, msgType: Swift.String, memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
   public static func statsCL(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, msgType: Swift.String, clickData: GroobeeKit.ClickData, trackingId: Swift.String? = nil, memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
-  public static func statsShowRecommendGoods(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, algorithmCd: Swift.String, goods: [GroobeeKit.Goods], memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
-  public static func statsClickRecommendGoods(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, algorithmCd: Swift.String, goods: [GroobeeKit.Goods], memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
+  public static func statsShowRecommendGoods(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, algorithmCd: Swift.String, requestId: Swift.String, goods: [GroobeeKit.Goods], memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
+  public static func statsClickRecommendGoods(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, algorithmCd: Swift.String, requestId: Swift.String, goods: [GroobeeKit.Goods], memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class RequestParams : Swift.Codable {
@@ -415,6 +415,7 @@ public class StyleConstraints {
   public func getCampaignKey() -> Swift.String?
   public func getCampaignTypeCd() -> Swift.String?
   public func getTrackingId() -> Swift.String?
+  public func getRequestId() -> Swift.String?
   public func getClickData() -> GroobeeKit.ClickData?
   public func getOrderNo() -> Swift.String?
   public func getAppData() -> GroobeeKit.AppData?
@@ -445,6 +446,8 @@ public class StyleConstraints {
   @discardableResult
   public func setTrackingId(_ trackingId: Swift.String?) -> GroobeeKit.RequestParams
   @discardableResult
+  public func setRequestId(_ requestId: Swift.String?) -> GroobeeKit.RequestParams
+  @discardableResult
   public func setClickData(_ clickData: GroobeeKit.ClickData) -> GroobeeKit.RequestParams
   public func setOrderNo(_ orderNo: Swift.String) -> GroobeeKit.RequestParams
   public func setWebCookieId(_ webCookieId: Swift.String) -> GroobeeKit.RequestParams
@@ -462,7 +465,7 @@ public class StyleConstraints {
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public protocol ResponseGoods {
-  @objc func onSuccess(goods: [GroobeeKit.Goods])
+  @objc func onSuccess(aiRecommend: GroobeeKit.ArtificialRecommend)
   @objc func onFailed(exceptionMsg: Swift.String)
 }
 @_inheritsConvenienceInitializers @available(iOS 10.0, *)
@@ -487,6 +490,24 @@ public enum StateLifeCycle {
   public var hashValue: Swift.Int {
     get
   }
+}
+@_inheritsConvenienceInitializers @objc public class ArtificialRecommend : ObjectiveC.NSObject, Swift.Codable {
+  public var recommendList: [GroobeeKit.Goods]?
+  public var campaignKey: Swift.String?
+  public var algorithmCd: Swift.String?
+  public var requestId: Swift.String?
+  @objc public func getRecommendList() -> [GroobeeKit.Goods]?
+  @objc public func setRecommendList(_ recommendList: [GroobeeKit.Goods])
+  @objc public func getCampaignKey() -> Swift.String?
+  @objc public func setCampaignKey(_ campaignKey: Swift.String)
+  @objc public func getAlgorithmCd() -> Swift.String?
+  @objc public func setAlgorithmCd(_ algorithmCd: Swift.String)
+  @objc public func getRequestId() -> Swift.String?
+  @objc public func setRequestId(_ requestId: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 public struct MessageButton : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws

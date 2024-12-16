@@ -6617,17 +6617,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[GroobeeKit.Goods]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Goods",
-                    "printedName": "GroobeeKit.Goods",
-                    "usr": "c:@M@GroobeeKit@objc(cs)Goods"
-                  }
-                ],
-                "usr": "s:Sa"
+                "name": "ArtificialRecommend",
+                "printedName": "GroobeeKit.ArtificialRecommend",
+                "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend"
               },
               {
                 "kind": "TypeNominal",
@@ -6644,7 +6636,7 @@
             ],
             "declKind": "Func",
             "usr": "c:@M@GroobeeKit@objc(cs)Groobee(im)getRecommendGoodsWithCampaignKey:timeout:",
-            "mangledName": "$s10GroobeeKit0A0C17getRecommendGoods11campaignKey7timeoutSayAA0E0CGSS_SdtF",
+            "mangledName": "$s10GroobeeKit0A0C17getRecommendGoods11campaignKey7timeoutAA010ArtificialD0CSS_SdtF",
             "moduleName": "GroobeeKit",
             "isOpen": true,
             "objc_name": "getRecommendGoodsWithCampaignKey:timeout:",
@@ -6694,7 +6686,7 @@
           {
             "kind": "Function",
             "name": "setShowRecommendGoods",
-            "printedName": "setShowRecommendGoods(goods:)",
+            "printedName": "setShowRecommendGoods(goods:campaignKey:algorithmCd:requestId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6714,14 +6706,32 @@
                   }
                 ],
                 "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@GroobeeKit@objc(cs)Groobee(im)setShowRecommendGoodsWithGoods:",
-            "mangledName": "$s10GroobeeKit0A0C21setShowRecommendGoods5goodsySayAA0F0CG_tF",
+            "usr": "c:@M@GroobeeKit@objc(cs)Groobee(im)setShowRecommendGoodsWithGoods:campaignKey:algorithmCd:requestId:",
+            "mangledName": "$s10GroobeeKit0A0C21setShowRecommendGoods5goods11campaignKey11algorithmCd9requestIdySayAA0F0CG_S3StF",
             "moduleName": "GroobeeKit",
             "isOpen": true,
-            "objc_name": "setShowRecommendGoodsWithGoods:",
+            "objc_name": "setShowRecommendGoodsWithGoods:campaignKey:algorithmCd:requestId:",
             "declAttributes": [
               "AccessControl",
               "ObjC",
@@ -6732,7 +6742,7 @@
           {
             "kind": "Function",
             "name": "setClickRecommendGoods",
-            "printedName": "setClickRecommendGoods(goods:)",
+            "printedName": "setClickRecommendGoods(goods:campaignKey:algorithmCd:requestId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6744,14 +6754,32 @@
                 "name": "Goods",
                 "printedName": "GroobeeKit.Goods",
                 "usr": "c:@M@GroobeeKit@objc(cs)Goods"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@GroobeeKit@objc(cs)Groobee(im)setClickRecommendGoodsWithGoods:",
-            "mangledName": "$s10GroobeeKit0A0C22setClickRecommendGoods5goodsyAA0F0C_tF",
+            "usr": "c:@M@GroobeeKit@objc(cs)Groobee(im)setClickRecommendGoodsWithGoods:campaignKey:algorithmCd:requestId:",
+            "mangledName": "$s10GroobeeKit0A0C22setClickRecommendGoods5goods11campaignKey11algorithmCd9requestIdyAA0F0C_S3StF",
             "moduleName": "GroobeeKit",
             "isOpen": true,
-            "objc_name": "setClickRecommendGoodsWithGoods:",
+            "objc_name": "setClickRecommendGoodsWithGoods:campaignKey:algorithmCd:requestId:",
             "declAttributes": [
               "AccessControl",
               "ObjC",
@@ -8636,17 +8664,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[GroobeeKit.Goods]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Goods",
-                    "printedName": "GroobeeKit.Goods",
-                    "usr": "c:@M@GroobeeKit@objc(cs)Goods"
-                  }
-                ],
-                "usr": "s:Sa"
+                "name": "ArtificialRecommend",
+                "printedName": "GroobeeKit.ArtificialRecommend",
+                "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend"
               },
               {
                 "kind": "TypeNominal",
@@ -8668,8 +8688,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:10GroobeeKit0A14ServiceManagerC18sendRequestTimeoutySayAA5GoodsCGSS_SSSdtFZ",
-            "mangledName": "$s10GroobeeKit0A14ServiceManagerC18sendRequestTimeoutySayAA5GoodsCGSS_SSSdtFZ",
+            "usr": "s:10GroobeeKit0A14ServiceManagerC18sendRequestTimeoutyAA19ArtificialRecommendCSS_SSSdtFZ",
+            "mangledName": "$s10GroobeeKit0A14ServiceManagerC18sendRequestTimeoutyAA19ArtificialRecommendCSS_SSSdtFZ",
             "moduleName": "GroobeeKit",
             "static": true,
             "declAttributes": [
@@ -8808,17 +8828,9 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[GroobeeKit.Goods]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Goods",
-                    "printedName": "GroobeeKit.Goods",
-                    "usr": "c:@M@GroobeeKit@objc(cs)Goods"
-                  }
-                ],
-                "usr": "s:Sa"
+                "name": "ArtificialRecommend",
+                "printedName": "GroobeeKit.ArtificialRecommend",
+                "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend"
               },
               {
                 "kind": "TypeNominal",
@@ -8853,8 +8865,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:10GroobeeKit0A14ServiceManagerC22responseRecommendGoods_10urlRequest0E0SayAA0G0CGSS_10Foundation10URLRequestVSDySSypGtFZ",
-            "mangledName": "$s10GroobeeKit0A14ServiceManagerC22responseRecommendGoods_10urlRequest0E0SayAA0G0CGSS_10Foundation10URLRequestVSDySSypGtFZ",
+            "usr": "s:10GroobeeKit0A14ServiceManagerC22responseRecommendGoods_10urlRequest0E0AA010ArtificialF0CSS_10Foundation10URLRequestVSDySSypGtFZ",
+            "mangledName": "$s10GroobeeKit0A14ServiceManagerC22responseRecommendGoods_10urlRequest0E0AA010ArtificialF0CSS_10Foundation10URLRequestVSDySSypGtFZ",
             "moduleName": "GroobeeKit",
             "static": true,
             "declAttributes": [
@@ -21566,13 +21578,19 @@
           {
             "kind": "Function",
             "name": "statsShowRecommendGoods",
-            "printedName": "statsShowRecommendGoods(serviceKey:cookieId:userId:campaignKey:algorithmCd:goods:memberId:)",
+            "printedName": "statsShowRecommendGoods(serviceKey:cookieId:userId:campaignKey:algorithmCd:requestId:goods:memberId:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "RequestParams",
                 "printedName": "GroobeeKit.RequestParams",
                 "usr": "s:10GroobeeKit13RequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -21635,8 +21653,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:10GroobeeKit12ModelBuilderC23statsShowRecommendGoods10serviceKey8cookieId04userL008campaignJ011algorithmCd5goods06memberL0AA13RequestParamsCSS_S4SSayAA0H0CGSSSgtFZ",
-            "mangledName": "$s10GroobeeKit12ModelBuilderC23statsShowRecommendGoods10serviceKey8cookieId04userL008campaignJ011algorithmCd5goods06memberL0AA13RequestParamsCSS_S4SSayAA0H0CGSSSgtFZ",
+            "usr": "s:10GroobeeKit12ModelBuilderC23statsShowRecommendGoods10serviceKey8cookieId04userL008campaignJ011algorithmCd07requestL05goods06memberL0AA13RequestParamsCSS_S5SSayAA0H0CGSSSgtFZ",
+            "mangledName": "$s10GroobeeKit12ModelBuilderC23statsShowRecommendGoods10serviceKey8cookieId04userL008campaignJ011algorithmCd07requestL05goods06memberL0AA13RequestParamsCSS_S5SSayAA0H0CGSSSgtFZ",
             "moduleName": "GroobeeKit",
             "static": true,
             "declAttributes": [
@@ -21649,13 +21667,19 @@
           {
             "kind": "Function",
             "name": "statsClickRecommendGoods",
-            "printedName": "statsClickRecommendGoods(serviceKey:cookieId:userId:campaignKey:algorithmCd:goods:memberId:)",
+            "printedName": "statsClickRecommendGoods(serviceKey:cookieId:userId:campaignKey:algorithmCd:requestId:goods:memberId:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "RequestParams",
                 "printedName": "GroobeeKit.RequestParams",
                 "usr": "s:10GroobeeKit13RequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -21718,8 +21742,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:10GroobeeKit12ModelBuilderC24statsClickRecommendGoods10serviceKey8cookieId04userL008campaignJ011algorithmCd5goods06memberL0AA13RequestParamsCSS_S4SSayAA0H0CGSSSgtFZ",
-            "mangledName": "$s10GroobeeKit12ModelBuilderC24statsClickRecommendGoods10serviceKey8cookieId04userL008campaignJ011algorithmCd5goods06memberL0AA13RequestParamsCSS_S4SSayAA0H0CGSSSgtFZ",
+            "usr": "s:10GroobeeKit12ModelBuilderC24statsClickRecommendGoods10serviceKey8cookieId04userL008campaignJ011algorithmCd07requestL05goods06memberL0AA13RequestParamsCSS_S5SSayAA0H0CGSSSgtFZ",
+            "mangledName": "$s10GroobeeKit12ModelBuilderC24statsClickRecommendGoods10serviceKey8cookieId04userL008campaignJ011algorithmCd07requestL05goods06memberL0AA13RequestParamsCSS_S5SSayAA0H0CGSSSgtFZ",
             "moduleName": "GroobeeKit",
             "static": true,
             "declAttributes": [
@@ -22257,6 +22281,37 @@
             "declKind": "Func",
             "usr": "s:10GroobeeKit13RequestParamsC13getTrackingIdSSSgyF",
             "mangledName": "$s10GroobeeKit13RequestParamsC13getTrackingIdSSSgyF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getRequestId",
+            "printedName": "getRequestId()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10GroobeeKit13RequestParamsC03getC2IdSSSgyF",
+            "mangledName": "$s10GroobeeKit13RequestParamsC03getC2IdSSSgyF",
             "moduleName": "GroobeeKit",
             "isOpen": true,
             "declAttributes": [
@@ -22988,6 +23043,44 @@
           },
           {
             "kind": "Function",
+            "name": "setRequestId",
+            "printedName": "setRequestId(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RequestParams",
+                "printedName": "GroobeeKit.RequestParams",
+                "usr": "s:10GroobeeKit13RequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10GroobeeKit13RequestParamsC03setC2IdyACSSSgF",
+            "mangledName": "$s10GroobeeKit13RequestParamsC03setC2IdyACSSSgF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "DiscardableResult",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "setClickData",
             "printedName": "setClickData(_:)",
             "children": [
@@ -23437,7 +23530,7 @@
           {
             "kind": "Function",
             "name": "onSuccess",
-            "printedName": "onSuccess(goods:)",
+            "printedName": "onSuccess(aiRecommend:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -23446,22 +23539,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[GroobeeKit.Goods]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Goods",
-                    "printedName": "GroobeeKit.Goods",
-                    "usr": "c:@M@GroobeeKit@objc(cs)Goods"
-                  }
-                ],
-                "usr": "s:Sa"
+                "name": "ArtificialRecommend",
+                "printedName": "GroobeeKit.ArtificialRecommend",
+                "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@GroobeeKit@objc(pl)ResponseGoods(im)onSuccessWithGoods:",
-            "mangledName": "$s10GroobeeKit13ResponseGoodsP9onSuccess5goodsySayAA0D0CG_tF",
+            "usr": "c:@M@GroobeeKit@objc(pl)ResponseGoods(im)onSuccessWithAiRecommend:",
+            "mangledName": "$s10GroobeeKit13ResponseGoodsP9onSuccess11aiRecommendyAA010ArtificialH0C_tF",
             "moduleName": "GroobeeKit",
             "genericSig": "<τ_0_0 where τ_0_0 : GroobeeKit.ResponseGoods>",
             "sugared_genericSig": "<Self where Self : GroobeeKit.ResponseGoods>",
@@ -24246,6 +24331,942 @@
             "printedName": "Hashable",
             "usr": "s:SH",
             "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "GroobeeKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ArtificialRecommend",
+        "printedName": "ArtificialRecommend",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "recommendList",
+            "printedName": "recommendList",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[GroobeeKit.Goods]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[GroobeeKit.Goods]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Goods",
+                        "printedName": "GroobeeKit.Goods",
+                        "usr": "c:@M@GroobeeKit@objc(cs)Goods"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10GroobeeKit19ArtificialRecommendC13recommendListSayAA5GoodsCGSgvp",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC13recommendListSayAA5GoodsCGSgvp",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[GroobeeKit.Goods]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[GroobeeKit.Goods]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Goods",
+                            "printedName": "GroobeeKit.Goods",
+                            "usr": "c:@M@GroobeeKit@objc(cs)Goods"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC13recommendListSayAA5GoodsCGSgvg",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC13recommendListSayAA5GoodsCGSgvg",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[GroobeeKit.Goods]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[GroobeeKit.Goods]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Goods",
+                            "printedName": "GroobeeKit.Goods",
+                            "usr": "c:@M@GroobeeKit@objc(cs)Goods"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC13recommendListSayAA5GoodsCGSgvs",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC13recommendListSayAA5GoodsCGSgvs",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC13recommendListSayAA5GoodsCGSgvM",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC13recommendListSayAA5GoodsCGSgvM",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "campaignKey",
+            "printedName": "campaignKey",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10GroobeeKit19ArtificialRecommendC11campaignKeySSSgvp",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC11campaignKeySSSgvp",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC11campaignKeySSSgvg",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC11campaignKeySSSgvg",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC11campaignKeySSSgvs",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC11campaignKeySSSgvs",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC11campaignKeySSSgvM",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC11campaignKeySSSgvM",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "algorithmCd",
+            "printedName": "algorithmCd",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10GroobeeKit19ArtificialRecommendC11algorithmCdSSSgvp",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC11algorithmCdSSSgvp",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC11algorithmCdSSSgvg",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC11algorithmCdSSSgvg",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC11algorithmCdSSSgvs",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC11algorithmCdSSSgvs",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC11algorithmCdSSSgvM",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC11algorithmCdSSSgvM",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "requestId",
+            "printedName": "requestId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10GroobeeKit19ArtificialRecommendC9requestIdSSSgvp",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC9requestIdSSSgvp",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC9requestIdSSSgvg",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC9requestIdSSSgvg",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC9requestIdSSSgvs",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC9requestIdSSSgvs",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10GroobeeKit19ArtificialRecommendC9requestIdSSSgvM",
+                "mangledName": "$s10GroobeeKit19ArtificialRecommendC9requestIdSSSgvM",
+                "moduleName": "GroobeeKit",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "getRecommendList",
+            "printedName": "getRecommendList()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[GroobeeKit.Goods]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[GroobeeKit.Goods]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Goods",
+                        "printedName": "GroobeeKit.Goods",
+                        "usr": "c:@M@GroobeeKit@objc(cs)Goods"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend(im)getRecommendList",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC03getD4ListSayAA5GoodsCGSgyF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setRecommendList",
+            "printedName": "setRecommendList(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[GroobeeKit.Goods]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Goods",
+                    "printedName": "GroobeeKit.Goods",
+                    "usr": "c:@M@GroobeeKit@objc(cs)Goods"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend(im)setRecommendList:",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC03setD4ListyySayAA5GoodsCGF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getCampaignKey",
+            "printedName": "getCampaignKey()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend(im)getCampaignKey",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC14getCampaignKeySSSgyF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setCampaignKey",
+            "printedName": "setCampaignKey(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend(im)setCampaignKey:",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC14setCampaignKeyyySSF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAlgorithmCd",
+            "printedName": "getAlgorithmCd()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend(im)getAlgorithmCd",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC14getAlgorithmCdSSSgyF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setAlgorithmCd",
+            "printedName": "setAlgorithmCd(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend(im)setAlgorithmCd:",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC14setAlgorithmCdyySSF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getRequestId",
+            "printedName": "getRequestId()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend(im)getRequestId",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC12getRequestIdSSSgyF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setRequestId",
+            "printedName": "setRequestId(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend(im)setRequestId:",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC12setRequestIdyySSF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ArtificialRecommend",
+                "printedName": "GroobeeKit.ArtificialRecommend",
+                "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend(im)init",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendCACycfc",
+            "moduleName": "GroobeeKit",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ArtificialRecommend",
+                "printedName": "GroobeeKit.ArtificialRecommend",
+                "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10GroobeeKit19ArtificialRecommendC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "GroobeeKit",
+            "implicit": true,
+            "declAttributes": [
+              "Required"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10GroobeeKit19ArtificialRecommendC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s10GroobeeKit19ArtificialRecommendC6encode2toys7Encoder_p_tKF",
+            "moduleName": "GroobeeKit",
+            "implicit": true,
+            "isOpen": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@GroobeeKit@objc(cs)ArtificialRecommend",
+        "mangledName": "$s10GroobeeKit19ArtificialRecommendC",
+        "moduleName": "GroobeeKit",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
       },
@@ -29095,7 +30116,7 @@
       "kind": "StringLiteral",
       "offset": 279,
       "length": 8,
-      "value": "\"1.0.38\""
+      "value": "\"1.0.39\""
     },
     {
       "filePath": "\/Users\/hataejong\/Desktop\/work\/opr\/GroobeeKit\/Sources\/GroobeeKit\/Common\/Constraints.swift",

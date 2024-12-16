@@ -313,7 +313,22 @@ SWIFT_CLASS("_TtC10GroobeeKit7Agreeds")
 @property (nonatomic) BOOL agreedAN;
 @end
 
+@class Goods;
 @class NSString;
+
+SWIFT_CLASS("_TtC10GroobeeKit19ArtificialRecommend")
+@interface ArtificialRecommend : NSObject
+- (NSArray<Goods *> * _Nullable)getRecommendList SWIFT_WARN_UNUSED_RESULT;
+- (void)setRecommendList:(NSArray<Goods *> * _Nonnull)recommendList;
+- (NSString * _Nullable)getCampaignKey SWIFT_WARN_UNUSED_RESULT;
+- (void)setCampaignKey:(NSString * _Nonnull)campaignKey;
+- (NSString * _Nullable)getAlgorithmCd SWIFT_WARN_UNUSED_RESULT;
+- (void)setAlgorithmCd:(NSString * _Nonnull)algorithmCd;
+- (NSString * _Nullable)getRequestId SWIFT_WARN_UNUSED_RESULT;
+- (void)setRequestId:(NSString * _Nonnull)requestId;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC10GroobeeKit5Goods")
 @interface Goods : NSObject
@@ -372,10 +387,10 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setGoodsOrderWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setViewGoodsWithGoods:(Goods * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
-- (NSArray<Goods *> * _Nonnull)getRecommendGoodsWithCampaignKey:(NSString * _Nonnull)campaignKey timeout:(double)timeout SWIFT_WARN_UNUSED_RESULT;
+- (ArtificialRecommend * _Nonnull)getRecommendGoodsWithCampaignKey:(NSString * _Nonnull)campaignKey timeout:(double)timeout SWIFT_WARN_UNUSED_RESULT;
 - (void)getRecommendGoodsWithCampaignKey:(NSString * _Nonnull)campaignKey responseGoods:(id <ResponseGoods> _Nonnull)responseGoods;
-- (void)setShowRecommendGoodsWithGoods:(NSArray<Goods *> * _Nonnull)goods;
-- (void)setClickRecommendGoodsWithGoods:(Goods * _Nonnull)goods;
+- (void)setShowRecommendGoodsWithGoods:(NSArray<Goods *> * _Nonnull)goods campaignKey:(NSString * _Nonnull)campaignKey algorithmCd:(NSString * _Nonnull)algorithmCd requestId:(NSString * _Nonnull)requestId;
+- (void)setClickRecommendGoodsWithGoods:(Goods * _Nonnull)goods campaignKey:(NSString * _Nonnull)campaignKey algorithmCd:(NSString * _Nonnull)algorithmCd requestId:(NSString * _Nonnull)requestId;
 - (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
@@ -465,7 +480,7 @@ SWIFT_PROTOCOL("_TtP10GroobeeKit15ResponseAgreeds_")
 
 SWIFT_PROTOCOL("_TtP10GroobeeKit13ResponseGoods_")
 @protocol ResponseGoods
-- (void)onSuccessWithGoods:(NSArray<Goods *> * _Nonnull)goods;
+- (void)onSuccessWithAiRecommend:(ArtificialRecommend * _Nonnull)aiRecommend;
 - (void)onFailedWithExceptionMsg:(NSString * _Nonnull)exceptionMsg;
 @end
 
@@ -811,7 +826,22 @@ SWIFT_CLASS("_TtC10GroobeeKit7Agreeds")
 @property (nonatomic) BOOL agreedAN;
 @end
 
+@class Goods;
 @class NSString;
+
+SWIFT_CLASS("_TtC10GroobeeKit19ArtificialRecommend")
+@interface ArtificialRecommend : NSObject
+- (NSArray<Goods *> * _Nullable)getRecommendList SWIFT_WARN_UNUSED_RESULT;
+- (void)setRecommendList:(NSArray<Goods *> * _Nonnull)recommendList;
+- (NSString * _Nullable)getCampaignKey SWIFT_WARN_UNUSED_RESULT;
+- (void)setCampaignKey:(NSString * _Nonnull)campaignKey;
+- (NSString * _Nullable)getAlgorithmCd SWIFT_WARN_UNUSED_RESULT;
+- (void)setAlgorithmCd:(NSString * _Nonnull)algorithmCd;
+- (NSString * _Nullable)getRequestId SWIFT_WARN_UNUSED_RESULT;
+- (void)setRequestId:(NSString * _Nonnull)requestId;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC10GroobeeKit5Goods")
 @interface Goods : NSObject
@@ -870,10 +900,10 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setGoodsOrderWithGoods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setGoodsOrderCompleteWithOrderNo:(NSString * _Nonnull)orderNo goods:(NSArray<Goods *> * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setViewGoodsWithGoods:(Goods * _Nonnull)goods screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
-- (NSArray<Goods *> * _Nonnull)getRecommendGoodsWithCampaignKey:(NSString * _Nonnull)campaignKey timeout:(double)timeout SWIFT_WARN_UNUSED_RESULT;
+- (ArtificialRecommend * _Nonnull)getRecommendGoodsWithCampaignKey:(NSString * _Nonnull)campaignKey timeout:(double)timeout SWIFT_WARN_UNUSED_RESULT;
 - (void)getRecommendGoodsWithCampaignKey:(NSString * _Nonnull)campaignKey responseGoods:(id <ResponseGoods> _Nonnull)responseGoods;
-- (void)setShowRecommendGoodsWithGoods:(NSArray<Goods *> * _Nonnull)goods;
-- (void)setClickRecommendGoodsWithGoods:(Goods * _Nonnull)goods;
+- (void)setShowRecommendGoodsWithGoods:(NSArray<Goods *> * _Nonnull)goods campaignKey:(NSString * _Nonnull)campaignKey algorithmCd:(NSString * _Nonnull)algorithmCd requestId:(NSString * _Nonnull)requestId;
+- (void)setClickRecommendGoodsWithGoods:(Goods * _Nonnull)goods campaignKey:(NSString * _Nonnull)campaignKey algorithmCd:(NSString * _Nonnull)algorithmCd requestId:(NSString * _Nonnull)requestId;
 - (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
@@ -963,7 +993,7 @@ SWIFT_PROTOCOL("_TtP10GroobeeKit15ResponseAgreeds_")
 
 SWIFT_PROTOCOL("_TtP10GroobeeKit13ResponseGoods_")
 @protocol ResponseGoods
-- (void)onSuccessWithGoods:(NSArray<Goods *> * _Nonnull)goods;
+- (void)onSuccessWithAiRecommend:(ArtificialRecommend * _Nonnull)aiRecommend;
 - (void)onFailedWithExceptionMsg:(NSString * _Nonnull)exceptionMsg;
 @end
 
