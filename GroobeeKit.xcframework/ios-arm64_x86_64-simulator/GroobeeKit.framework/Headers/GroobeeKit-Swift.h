@@ -481,7 +481,7 @@ SWIFT_PROTOCOL("_TtP10GroobeeKit15ResponseAgreeds_")
 SWIFT_PROTOCOL("_TtP10GroobeeKit13ResponseGoods_")
 @protocol ResponseGoods
 - (void)onSuccessWithAiRecommend:(ArtificialRecommend * _Nonnull)aiRecommend;
-- (void)onFailedWithExceptionMsg:(NSString * _Nonnull)exceptionMsg;
+- (void)onFailedWithExceptionMsg:(NSString * _Nonnull)exceptionMsg campaignKey:(NSString * _Nonnull)campaignKey;
 @end
 
 
@@ -994,7 +994,7 @@ SWIFT_PROTOCOL("_TtP10GroobeeKit15ResponseAgreeds_")
 SWIFT_PROTOCOL("_TtP10GroobeeKit13ResponseGoods_")
 @protocol ResponseGoods
 - (void)onSuccessWithAiRecommend:(ArtificialRecommend * _Nonnull)aiRecommend;
-- (void)onFailedWithExceptionMsg:(NSString * _Nonnull)exceptionMsg;
+- (void)onFailedWithExceptionMsg:(NSString * _Nonnull)exceptionMsg campaignKey:(NSString * _Nonnull)campaignKey;
 @end
 
 

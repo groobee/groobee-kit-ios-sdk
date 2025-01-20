@@ -8702,7 +8702,7 @@
           {
             "kind": "Function",
             "name": "sendGoodsRequest",
-            "printedName": "sendGoodsRequest(_:_:_:)",
+            "printedName": "sendGoodsRequest(_:_:_:_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8726,11 +8726,17 @@
                 "name": "ResponseGoods",
                 "printedName": "any GroobeeKit.ResponseGoods",
                 "usr": "c:@M@GroobeeKit@objc(pl)ResponseGoods"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10GroobeeKit0A14ServiceManagerC16sendGoodsRequestyySS_SSAA08ResponseF0_ptFZ",
-            "mangledName": "$s10GroobeeKit0A14ServiceManagerC16sendGoodsRequestyySS_SSAA08ResponseF0_ptFZ",
+            "usr": "s:10GroobeeKit0A14ServiceManagerC16sendGoodsRequestyySS_SSAA08ResponseF0_pSStFZ",
+            "mangledName": "$s10GroobeeKit0A14ServiceManagerC16sendGoodsRequestyySS_SSAA08ResponseF0_pSStFZ",
             "moduleName": "GroobeeKit",
             "static": true,
             "declAttributes": [
@@ -8880,7 +8886,7 @@
           {
             "kind": "Function",
             "name": "responseRecommendGoods",
-            "printedName": "responseRecommendGoods(_:urlRequest:response:recommendGoods:)",
+            "printedName": "responseRecommendGoods(_:urlRequest:response:recommendGoods:campaignKey:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8923,11 +8929,17 @@
                 "name": "ResponseGoods",
                 "printedName": "any GroobeeKit.ResponseGoods",
                 "usr": "c:@M@GroobeeKit@objc(pl)ResponseGoods"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10GroobeeKit0A14ServiceManagerC22responseRecommendGoods_10urlRequest0E009recommendG0ySS_10Foundation10URLRequestVSDySSypGAA08ResponseG0_ptFZ",
-            "mangledName": "$s10GroobeeKit0A14ServiceManagerC22responseRecommendGoods_10urlRequest0E009recommendG0ySS_10Foundation10URLRequestVSDySSypGAA08ResponseG0_ptFZ",
+            "usr": "s:10GroobeeKit0A14ServiceManagerC22responseRecommendGoods_10urlRequest0E009recommendG011campaignKeyySS_10Foundation10URLRequestVSDySSypGAA08ResponseG0_pSStFZ",
+            "mangledName": "$s10GroobeeKit0A14ServiceManagerC22responseRecommendGoods_10urlRequest0E009recommendG011campaignKeyySS_10Foundation10URLRequestVSDySSypGAA08ResponseG0_pSStFZ",
             "moduleName": "GroobeeKit",
             "static": true,
             "declAttributes": [
@@ -23561,7 +23573,7 @@
           {
             "kind": "Function",
             "name": "onFailed",
-            "printedName": "onFailed(exceptionMsg:)",
+            "printedName": "onFailed(exceptionMsg:campaignKey:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -23573,11 +23585,17 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@GroobeeKit@objc(pl)ResponseGoods(im)onFailedWithExceptionMsg:",
-            "mangledName": "$s10GroobeeKit13ResponseGoodsP8onFailed12exceptionMsgySS_tF",
+            "usr": "c:@M@GroobeeKit@objc(pl)ResponseGoods(im)onFailedWithExceptionMsg:campaignKey:",
+            "mangledName": "$s10GroobeeKit13ResponseGoodsP8onFailed12exceptionMsg11campaignKeyySS_SStF",
             "moduleName": "GroobeeKit",
             "genericSig": "<τ_0_0 where τ_0_0 : GroobeeKit.ResponseGoods>",
             "sugared_genericSig": "<Self where Self : GroobeeKit.ResponseGoods>",
@@ -30116,7 +30134,7 @@
       "kind": "StringLiteral",
       "offset": 279,
       "length": 8,
-      "value": "\"1.0.41\""
+      "value": "\"1.0.42\""
     },
     {
       "filePath": "\/Users\/hataejong\/Desktop\/work\/opr\/GroobeeKit\/Sources\/GroobeeKit\/Common\/Constraints.swift",

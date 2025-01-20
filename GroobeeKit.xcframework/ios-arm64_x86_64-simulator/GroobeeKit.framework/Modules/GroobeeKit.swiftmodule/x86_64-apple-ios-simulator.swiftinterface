@@ -95,7 +95,7 @@ public typealias DetectClickedButton = () -> Swift.Void
 extension GroobeeKit.GroobeeServiceManager {
   public static func responseService(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any])
   public static func responseRecommendGoods(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any]) -> GroobeeKit.ArtificialRecommend
-  public static func responseRecommendGoods(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any], recommendGoods: any GroobeeKit.ResponseGoods)
+  public static func responseRecommendGoods(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any], recommendGoods: any GroobeeKit.ResponseGoods, campaignKey: Swift.String)
   public static func responseInAppMessage(screenId: Swift.String?, response: [Swift.String : Any])
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class UrlUtils : UIKit.UIApplication {
@@ -176,7 +176,7 @@ public class GroobeeServiceManager : ObjectiveC.NSObject, Foundation.URLSessionD
   public static func sendAsyncPushRequest(_ url: Swift.String, _ request: Swift.String, _ responseAgreeds: any GroobeeKit.ResponseAgreeds)
   public static func sendRequest(_ url: Swift.String, _ request: Swift.String, screenId: Swift.String? = nil)
   public static func sendRequestTimeout(_ url: Swift.String, _ request: Swift.String, _ timeout: Swift.Double) -> GroobeeKit.ArtificialRecommend
-  public static func sendGoodsRequest(_ url: Swift.String, _ request: Swift.String, _ recommendGoods: any GroobeeKit.ResponseGoods)
+  public static func sendGoodsRequest(_ url: Swift.String, _ request: Swift.String, _ recommendGoods: any GroobeeKit.ResponseGoods, _ campaignKey: Swift.String)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -466,7 +466,7 @@ public class StyleConstraints {
 }
 @objc public protocol ResponseGoods {
   @objc func onSuccess(aiRecommend: GroobeeKit.ArtificialRecommend)
-  @objc func onFailed(exceptionMsg: Swift.String)
+  @objc func onFailed(exceptionMsg: Swift.String, campaignKey: Swift.String)
 }
 @_inheritsConvenienceInitializers @available(iOS 10.0, *)
 @objc open class GroobeeNotification : ObjectiveC.NSObject {
