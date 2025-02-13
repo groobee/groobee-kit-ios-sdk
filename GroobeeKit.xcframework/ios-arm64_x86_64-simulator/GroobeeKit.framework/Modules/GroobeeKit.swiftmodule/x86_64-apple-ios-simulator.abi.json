@@ -5524,6 +5524,52 @@
           },
           {
             "kind": "Function",
+            "name": "serviceLogout",
+            "printedName": "serviceLogout()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)Groobee(im)serviceLogout",
+            "mangledName": "$s10GroobeeKit0A0C13serviceLogoutyyF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "memberDataClear",
+            "printedName": "memberDataClear()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)Groobee(im)memberDataClear",
+            "mangledName": "$s10GroobeeKit0A0C15memberDataClearyyF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "configure",
             "printedName": "configure(groobeeConfig:)",
             "children": [
@@ -6650,7 +6696,7 @@
           {
             "kind": "Function",
             "name": "getRecommendGoods",
-            "printedName": "getRecommendGoods(campaignKey:responseGoods:)",
+            "printedName": "getRecommendGoods(campaignKey:responseGoods:retryCount:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6668,14 +6714,21 @@
                 "name": "ResponseGoods",
                 "printedName": "any GroobeeKit.ResponseGoods",
                 "usr": "c:@M@GroobeeKit@objc(pl)ResponseGoods"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@GroobeeKit@objc(cs)Groobee(im)getRecommendGoodsWithCampaignKey:responseGoods:",
-            "mangledName": "$s10GroobeeKit0A0C17getRecommendGoods11campaignKey08responseE0ySS_AA08ResponseE0_ptF",
+            "usr": "c:@M@GroobeeKit@objc(cs)Groobee(im)getRecommendGoodsWithCampaignKey:responseGoods:retryCount:",
+            "mangledName": "$s10GroobeeKit0A0C17getRecommendGoods11campaignKey08responseE010retryCountySS_AA08ResponseE0_pSitF",
             "moduleName": "GroobeeKit",
             "isOpen": true,
-            "objc_name": "getRecommendGoodsWithCampaignKey:responseGoods:",
+            "objc_name": "getRecommendGoodsWithCampaignKey:responseGoods:retryCount:",
             "declAttributes": [
               "AccessControl",
               "ObjC",
@@ -30095,6 +30148,13 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/hataejong\/Desktop\/work\/opr\/GroobeeKit\/Sources\/GroobeeKit\/Groobee.swift",
+      "kind": "IntegerLiteral",
+      "offset": 82710,
+      "length": 1,
+      "value": "0"
+    },
+    {
       "filePath": "\/Users\/hataejong\/Desktop\/work\/opr\/GroobeeKit\/Sources\/GroobeeKit\/GroobeeKitLifeCycle.swift",
       "kind": "BooleanLiteral",
       "offset": 702,
@@ -30134,7 +30194,7 @@
       "kind": "StringLiteral",
       "offset": 279,
       "length": 8,
-      "value": "\"1.0.42\""
+      "value": "\"1.0.43\""
     },
     {
       "filePath": "\/Users\/hataejong\/Desktop\/work\/opr\/GroobeeKit\/Sources\/GroobeeKit\/Common\/Constraints.swift",

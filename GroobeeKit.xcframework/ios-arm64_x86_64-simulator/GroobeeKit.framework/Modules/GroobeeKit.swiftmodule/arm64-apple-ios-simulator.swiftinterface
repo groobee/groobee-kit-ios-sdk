@@ -107,6 +107,8 @@ extension GroobeeKit.GroobeeServiceManager {
 @objc public class Groobee : ObjectiveC.NSObject {
   public var runtimeConfigProvider: GroobeeKit.RuntimeConfigProvider?
   @objc public static func getInstance() -> GroobeeKit.Groobee
+  @objc public func serviceLogout()
+  @objc public func memberDataClear()
   @objc public static func configure(groobeeConfig: GroobeeKit.GroobeeConfig?)
   public func allowSyncWebCookies()
   @objc public func setAppBundleInfo()
@@ -133,7 +135,7 @@ extension GroobeeKit.GroobeeServiceManager {
   @objc public func setGoodsOrderComplete(orderNo: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
   @objc public func setViewGoods(goods: GroobeeKit.Goods, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
   @objc public func getRecommendGoods(campaignKey: Swift.String, timeout: Swift.Double) -> GroobeeKit.ArtificialRecommend
-  @objc public func getRecommendGoods(campaignKey: Swift.String, responseGoods: any GroobeeKit.ResponseGoods)
+  @objc public func getRecommendGoods(campaignKey: Swift.String, responseGoods: any GroobeeKit.ResponseGoods, retryCount: Swift.Int = 0)
   @objc public func setShowRecommendGoods(goods: [GroobeeKit.Goods], campaignKey: Swift.String, algorithmCd: Swift.String, requestId: Swift.String)
   @objc public func setClickRecommendGoods(goods: GroobeeKit.Goods, campaignKey: Swift.String, algorithmCd: Swift.String, requestId: Swift.String)
   @objc public func setCategory(cateCd: Swift.String, cateNm: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
