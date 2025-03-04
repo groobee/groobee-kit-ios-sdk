@@ -400,6 +400,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
 - (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
 - (void)setAppLocationInfoWithUserLocation:(CLLocation * _Nonnull)userLocation;
+- (NSDictionary<NSString *, NSString *> * _Nonnull)getGroobeeWebCookies SWIFT_WARN_UNUSED_RESULT;
 - (void)setWebViewCookiesWithWebView:(WKWebView * _Nonnull)webView urlRequest:(NSURLRequest * _Nonnull)urlRequest;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end

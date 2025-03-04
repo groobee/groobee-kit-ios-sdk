@@ -7134,6 +7134,44 @@
           },
           {
             "kind": "Function",
+            "name": "getGroobeeWebCookies",
+            "printedName": "getGroobeeWebCookies()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@GroobeeKit@objc(cs)Groobee(im)getGroobeeWebCookies",
+            "mangledName": "$s10GroobeeKit0A0C03getA10WebCookiesSDyS2SGyF",
+            "moduleName": "GroobeeKit",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "setWebViewCookies",
             "printedName": "setWebViewCookies(webView:urlRequest:)",
             "children": [
@@ -30194,7 +30232,7 @@
       "kind": "StringLiteral",
       "offset": 279,
       "length": 8,
-      "value": "\"1.0.43\""
+      "value": "\"1.0.44\""
     },
     {
       "filePath": "\/Users\/hataejong\/Desktop\/work\/opr\/GroobeeKit\/Sources\/GroobeeKit\/Common\/Constraints.swift",

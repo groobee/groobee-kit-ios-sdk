@@ -145,6 +145,7 @@ extension GroobeeKit.GroobeeServiceManager {
   @objc public func setAppSessionStart(isTerminated: Swift.Bool)
   @objc public func setAppSessionEnd(isTerminated: Swift.Bool, iosSessionDtm: Swift.String)
   @objc public func setAppLocationInfo(userLocation: CoreLocation.CLLocation)
+  @objc public func getGroobeeWebCookies() -> [Swift.String : Swift.String]
   @objc public func setWebViewCookies(webView: WebKit.WKWebView, urlRequest: Foundation.URLRequest)
   public func setStatsCL(campaignKey: Swift.String, msgType: Swift.String, clickData: GroobeeKit.ClickData, trackingId: Swift.String?)
   public func setStatsDI(campaignKey: Swift.String, msgType: Swift.String)
