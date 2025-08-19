@@ -21550,7 +21550,7 @@
           {
             "kind": "Function",
             "name": "serviceCustomEvent",
-            "printedName": "serviceCustomEvent(serviceKey:cookieId:userId:memberId:eventKey:eventValue:)",
+            "printedName": "serviceCustomEvent(serviceKey:cookieId:userId:memberId:eventKey:eventValue:memberData:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -21601,11 +21601,25 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "GroobeeKit.MemberData?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MemberData",
+                    "printedName": "GroobeeKit.MemberData",
+                    "usr": "s:10GroobeeKit10MemberDataC"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:10GroobeeKit12ModelBuilderC18serviceCustomEvent0E3Key8cookieId04userJ006memberJ005eventH00M5ValueAA13RequestParamsCSS_S3SSgS2StFZ",
-            "mangledName": "$s10GroobeeKit12ModelBuilderC18serviceCustomEvent0E3Key8cookieId04userJ006memberJ005eventH00M5ValueAA13RequestParamsCSS_S3SSgS2StFZ",
+            "usr": "s:10GroobeeKit12ModelBuilderC18serviceCustomEvent0E3Key8cookieId04userJ006memberJ005eventH00M5Value0L4DataAA13RequestParamsCSS_S3SSgS2SAA06MemberO0CSgtFZ",
+            "mangledName": "$s10GroobeeKit12ModelBuilderC18serviceCustomEvent0E3Key8cookieId04userJ006memberJ005eventH00M5Value0L4DataAA13RequestParamsCSS_S3SSgS2SAA06MemberO0CSgtFZ",
             "moduleName": "GroobeeKit",
             "static": true,
             "declAttributes": [
@@ -30768,7 +30782,7 @@
       "kind": "StringLiteral",
       "offset": 279,
       "length": 8,
-      "value": "\"1.0.46\""
+      "value": "\"1.0.47\""
     },
     {
       "filePath": "\/Users\/hataejong\/Desktop\/work\/opr\/GroobeeKit\/Sources\/GroobeeKit\/Common\/Constraints.swift",
