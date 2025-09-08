@@ -397,7 +397,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
-- (void)setCustomEventWithEventKey:(NSString * _Nonnull)eventKey eventValue:(NSString * _Nonnull)eventValue;
+- (void)setCustomEventWithEventKey:(NSString * _Nonnull)eventKey screenId:(NSString * _Nonnull)screenId eventValue:(NSString * _Nonnull)eventValue;
 - (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
 - (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
 - (void)setAppLocationInfoWithUserLocation:(CLLocation * _Nonnull)userLocation;
@@ -914,7 +914,7 @@ SWIFT_CLASS("_TtC10GroobeeKit7Groobee") SWIFT_AVAILABILITY(ios,introduced=10.0)
 - (void)setCategoryWithCateCd:(NSString * _Nonnull)cateCd cateNm:(NSString * _Nonnull)cateNm screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
 - (void)setCustomerDataWithCustomData:(NSMutableDictionary * _Nonnull)customData;
 - (void)setScreenDataWithScreenName:(NSString * _Nonnull)screenName screenId:(NSString * _Nonnull)screenId clickButton:(void (^ _Nullable)(void))clickButton;
-- (void)setCustomEventWithEventKey:(NSString * _Nonnull)eventKey eventValue:(NSString * _Nonnull)eventValue;
+- (void)setCustomEventWithEventKey:(NSString * _Nonnull)eventKey screenId:(NSString * _Nonnull)screenId eventValue:(NSString * _Nonnull)eventValue;
 - (void)setAppSessionStartWithIsTerminated:(BOOL)isTerminated;
 - (void)setAppSessionEndWithIsTerminated:(BOOL)isTerminated iosSessionDtm:(NSString * _Nonnull)iosSessionDtm;
 - (void)setAppLocationInfoWithUserLocation:(CLLocation * _Nonnull)userLocation;

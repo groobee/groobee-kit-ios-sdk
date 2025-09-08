@@ -142,7 +142,7 @@ extension GroobeeKit.GroobeeServiceManager {
   @objc public func setCategory(cateCd: Swift.String, cateNm: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
   @objc public func setCustomerData(customData: Foundation.NSMutableDictionary)
   @objc public func setScreenData(screenName: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
-  @objc public func setCustomEvent(eventKey: Swift.String, eventValue: Swift.String)
+  @objc public func setCustomEvent(eventKey: Swift.String, screenId: Swift.String, eventValue: Swift.String)
   @objc public func setAppSessionStart(isTerminated: Swift.Bool)
   @objc public func setAppSessionEnd(isTerminated: Swift.Bool, iosSessionDtm: Swift.String)
   @objc public func setAppLocationInfo(userLocation: CoreLocation.CLLocation)
@@ -401,7 +401,7 @@ public class StyleConstraints {
   public static func serviceCategory(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, cateCd: Swift.String, cateNm: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
   public static func serviceCustomerData(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, customData: Foundation.NSMutableDictionary, memberData: GroobeeKit.MemberData?) -> [Swift.String : Any]
   public static func serviceScreenData(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, screenName: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
-  public static func serviceCustomEvent(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, eventKey: Swift.String, eventValue: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  public static func serviceCustomEvent(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, eventKey: Swift.String, eventValue: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
   public static func serviceAppSessionStart(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, isTerminated: Swift.Bool, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
   public static func serviceAppSessionEnd(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, isTerminated: Swift.Bool, iosSessionDtm: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
   public static func serviceAppLocation(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, latitude: Swift.Double, longitude: Swift.Double, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
@@ -520,6 +520,10 @@ public enum StateLifeCycle {
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
+}
+public struct MessageData : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct MessageButton : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
