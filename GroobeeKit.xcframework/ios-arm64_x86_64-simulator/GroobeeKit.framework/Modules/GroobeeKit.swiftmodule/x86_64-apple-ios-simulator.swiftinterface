@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name GroobeeKit
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name GroobeeKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AdSupport
 import CoreLocation
 import Foundation
@@ -26,8 +26,12 @@ public class StickyButtonView {
 @_hasMissingDesignatedInitializers public class CustomEvent : Swift.Codable {
   public var eventKey: Swift.String?
   public var eventValue: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getEventKey() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getEventValur() -> Swift.String?
+  #endif
   public func setEventKey(_ eventKey: Swift.String) -> GroobeeKit.CustomEvent
   public func setEventValue(_ eventValue: Swift.String) -> GroobeeKit.CustomEvent
   @objc deinit
@@ -44,15 +48,25 @@ public class StickyButtonView {
   public var goodsSalePrc: Swift.Int?
   public var goodsCnt: Swift.Int?
   public var goodsImg: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getGoodsNm() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getGoodsCd() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getGoodsCate() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getGoodsCateNm() -> Swift.String?
+  #endif
   @objc public func getGoodsAmt() -> Swift.Int
   @objc public func getGoodsPrc() -> Swift.Int
   @objc public func getGoodsSalePrc() -> Swift.Int
   @objc public func getGoodsCnt() -> Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getGoodsImg() -> Swift.String?
+  #endif
   @objc public func setGoodsNm(_ goodsNm: Swift.String) -> GroobeeKit.Goods
   @objc public func setGoodsCd(_ goodsCd: Swift.String) -> GroobeeKit.Goods
   @objc public func setGoodsCate(_ goodsCate: Swift.String) -> GroobeeKit.Goods
@@ -77,14 +91,22 @@ public class StickyBannerView {
 }
 @_hasMissingDesignatedInitializers @available(iOS 10.0, *)
 public class AutoLayout {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func setLayoutGravityConstraints(view: UIKit.UIView, targetView: UIKit.UIView, presentedView: UIKit.UIView? = nil, targetLeadingAnchor: UIKit.NSLayoutXAxisAnchor? = nil, targetTrailingAnchor: UIKit.NSLayoutXAxisAnchor? = nil, leadingConstant: CoreFoundation.CGFloat? = nil, trailingConstant: CoreFoundation.CGFloat? = nil, centerXAnchor: UIKit.NSLayoutXAxisAnchor? = nil, centerYAnchor: UIKit.NSLayoutYAxisAnchor? = nil, multiplier: CoreFoundation.CGFloat? = nil, gravity: Swift.Int? = nil) -> UIKit.UIView
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func setChildViewsConstraints(view: UIKit.UIView, stackView: UIKit.UIStackView? = nil, targetAnchor: UIKit.NSLayoutDimension? = nil, topAnchor: UIKit.NSLayoutYAxisAnchor? = nil, bottomAnchor: UIKit.NSLayoutYAxisAnchor? = nil, leadingAnchor: UIKit.NSLayoutXAxisAnchor? = nil, trailingAnchor: UIKit.NSLayoutXAxisAnchor? = nil, topConstant: CoreFoundation.CGFloat? = nil, bottomConstant: CoreFoundation.CGFloat? = nil, leadingConstant: CoreFoundation.CGFloat? = nil, trailingConstant: CoreFoundation.CGFloat? = nil, widthConstant: CoreFoundation.CGFloat? = nil, heightConstant: CoreFoundation.CGFloat? = nil, centerXAnchor: UIKit.NSLayoutXAxisAnchor? = nil, centerYAnchor: UIKit.NSLayoutYAxisAnchor? = nil, multiplier: CoreFoundation.CGFloat? = nil)
+  #endif
   @objc deinit
 }
 public typealias DetectClickedButton = () -> Swift.Void
 @_hasMissingDesignatedInitializers public class CategoryData : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getCateCd() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getCateNm() -> Swift.String?
+  #endif
   public func setCateCd(_ cateCd: Swift.String) -> GroobeeKit.CategoryData
   public func setCateNm(_ cateNm: Swift.String) -> GroobeeKit.CategoryData
   @objc deinit
@@ -96,7 +118,9 @@ extension GroobeeKit.GroobeeServiceManager {
   public static func responseService(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any])
   public static func responseRecommendGoods(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any]) -> GroobeeKit.ArtificialRecommend
   public static func responseRecommendGoods(_ url: Swift.String, urlRequest: Foundation.URLRequest, response: [Swift.String : Any], recommendGoods: any GroobeeKit.ResponseGoods, campaignKey: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func responseInAppMessage(screenId: Swift.String?, response: [Swift.String : Any])
+  #endif
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class UrlUtils : UIKit.UIApplication {
   @_Concurrency.MainActor @preconcurrency public static func open(url: Swift.String)
@@ -109,17 +133,25 @@ extension GroobeeKit.GroobeeServiceManager {
   @objc public static func getInstance() -> GroobeeKit.Groobee
   @objc public func serviceLogout()
   @objc public func memberDataClear()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func configure(groobeeConfig: GroobeeKit.GroobeeConfig?)
+  #endif
   public func allowSyncWebCookies()
   @objc public func setAppBundleInfo()
   public func setIsAuth(isAuth: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setServiceKey(groobeeConfig: GroobeeKit.GroobeeConfig?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setServiceLogin(memberId: Swift.String?)
+  #endif
   @objc public func setPushAgreeAP(isPushAgreedAP: Swift.Bool)
   @objc public func setPushAgreeAA(isPushAgreedAA: Swift.Bool)
   @objc public func setPushAgreeAN(isPushAgreedAN: Swift.Bool)
   @objc public func syncMemberAgreed(memberId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getPushAgreed(memberId: Swift.String) -> GroobeeKit.Agreeds?
+  #endif
   @objc public func getPushAgreed(memberId: Swift.String, responseAgreeds: any GroobeeKit.ResponseAgreeds)
   @objc public func setPushToken(pushToken: Swift.String)
   @objc public func userNotificationCenter(userInfo: [Swift.AnyHashable : Any])
@@ -129,26 +161,44 @@ extension GroobeeKit.GroobeeServiceManager {
   @objc public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.String, gender: Swift.String, type: Swift.String)
   @objc public func setUserInfo(id: Swift.String, grade: Swift.String, age: Swift.String, gender: Swift.String, type: Swift.String, pagr: Swift.String, iagr: Swift.String)
   @objc public func setUserInfo(userInfo: [Swift.String : Any])
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setMemberJoin(memberId: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setSearchKeyword(searchKwd: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setShoppingCart(goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setGoodsOrder(goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setGoodsOrderComplete(orderNo: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setViewGoods(goods: GroobeeKit.Goods, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  #endif
   @objc public func getRecommendGoods(campaignKey: Swift.String, timeout: Swift.Double) -> GroobeeKit.ArtificialRecommend
   @objc public func getRecommendGoods(campaignKey: Swift.String, responseGoods: any GroobeeKit.ResponseGoods, retryCount: Swift.Int = 0)
   @objc public func setShowRecommendGoods(goods: [GroobeeKit.Goods], campaignKey: Swift.String, algorithmCd: Swift.String, requestId: Swift.String)
   @objc public func setClickRecommendGoods(goods: GroobeeKit.Goods, campaignKey: Swift.String, algorithmCd: Swift.String, requestId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setCategory(cateCd: Swift.String, cateNm: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  #endif
   @objc public func setCustomerData(customData: Foundation.NSMutableDictionary)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setScreenData(screenName: Swift.String, screenId: Swift.String, clickButton: GroobeeKit.DetectClickedButton? = nil)
+  #endif
   @objc public func setCustomEvent(eventKey: Swift.String, screenId: Swift.String, eventValue: Swift.String)
   @objc public func setAppSessionStart(isTerminated: Swift.Bool)
   @objc public func setAppSessionEnd(isTerminated: Swift.Bool, iosSessionDtm: Swift.String)
-  @objc public func setAppLocationInfo(userLocation: CoreLocation.CLLocation)
+  @objc public func setAppLocationInfo(userLocation: _LocationEssentials.CLLocation)
   @objc public func getGroobeeWebCookies() -> [Swift.String : Swift.String]
   @objc public func setWebViewCookies(webView: WebKit.WKWebView, urlRequest: Foundation.URLRequest)
+  #if compiler(>=5.3) && $NonescapableTypes
   public func setStatsCL(campaignKey: Swift.String, msgType: Swift.String, clickData: GroobeeKit.ClickData, trackingId: Swift.String?)
+  #endif
   public func setStatsDI(campaignKey: Swift.String, msgType: Swift.String)
   public func dismissMessages()
   public func showInAppMessage(inAppMessage: GroobeeKit.InAppMessageModel, campaignKey: Swift.String, msgType: Swift.String)
@@ -178,7 +228,9 @@ public class GroobeeServiceManager : ObjectiveC.NSObject, Foundation.URLSessionD
   public static func sendAsyncRequest(_ url: Swift.String, _ request: Swift.String)
   public static func sendSyncPushRequest(_ url: Swift.String, _ request: Swift.String) -> Swift.String
   public static func sendAsyncPushRequest(_ url: Swift.String, _ request: Swift.String, _ responseAgreeds: any GroobeeKit.ResponseAgreeds)
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func sendRequest(_ url: Swift.String, _ request: Swift.String, screenId: Swift.String? = nil)
+  #endif
   public static func sendRequestTimeout(_ url: Swift.String, _ request: Swift.String, _ timeout: Swift.Double) -> GroobeeKit.ArtificialRecommend
   public static func sendGoodsRequest(_ url: Swift.String, _ request: Swift.String, _ recommendGoods: any GroobeeKit.ResponseGoods, _ campaignKey: Swift.String)
   @objc override dynamic public init()
@@ -243,12 +295,20 @@ public class StyleConstraints {
   public static let STICKY_BUTTON: Swift.String
   public static let GRAVITY_TOP: Swift.Int
   public static let GRAVITY_BOTTOM: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func setContainerViewStyle(inAppMessage: GroobeeKit.InAppMessageModel?, view: UIKit.UIView)
+  #endif
   public static func fadeInAnimation(view: UIKit.UIView)
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func setViewCornerRadius(isRound: Swift.Int?, view: UIKit.UIView, isParentView: Swift.Bool)
+  #endif
   public static func setTextLabelAlignment(gravity: Swift.Int, label: UIKit.UILabel)
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func setTextStyle(messageText: GroobeeKit.MessageText?, textLabel: UIKit.UILabel, isBodyStickyButton: Swift.Bool)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func setTextLabels(messageText: GroobeeKit.MessageText?, label: UIKit.UILabel, isBodyStickyButton: Swift.Bool)
+  #endif
   public static func setCloseButton(url: Swift.String, button: UIKit.UIButton)
   public static func setBackgroundColor(view: UIKit.UIView, color: Swift.String)
   @objc deinit
@@ -263,15 +323,33 @@ public class StyleConstraints {
   public var iagr: Swift.String?
   public var vendorCd: Swift.String?
   public var point: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getGrade() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getAge() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getGender() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getType() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getPagr() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getIagr() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getVendorCd() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getPoint() -> Swift.String?
+  #endif
   public func setId(_ id: Swift.String) -> GroobeeKit.MemberData
   public func setGrade(_ grade: Swift.String) -> GroobeeKit.MemberData
   public func setAge(_ age: Swift.String) -> GroobeeKit.MemberData
@@ -302,10 +380,18 @@ public class StyleConstraints {
   public var pushMsgType: Swift.String?
   public var pushMsgCnt: Swift.String?
   public var pushSendDtm: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getCampaignKey() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getPushMsgType() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getPushMsgCnt() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getPushSendDtm() -> Swift.String?
+  #endif
   @objc public func setCampaignKey(_ campaignKey: Swift.String) -> GroobeeKit.PushData
   @objc public func setPushMsgType(_ pushMsgType: Swift.String) -> GroobeeKit.PushData
   @objc public func setPushMsgCnt(_ pushMsgCnt: Swift.String) -> GroobeeKit.PushData
@@ -318,7 +404,9 @@ public class StyleConstraints {
 @_hasMissingDesignatedInitializers public class RuntimeConfigProvider {
   public func setRuntimeConfig(groobeeConfig: GroobeeKit.GroobeeConfig)
   public func clean()
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getDataString(key: Swift.String) -> Swift.String?
+  #endif
   public func getDataFloat(key: Swift.String) -> Swift.Float
   public func getDataBoolean(key: Swift.String) -> Swift.Bool
   public func getDataDictionary(key: Swift.String) -> Swift.Dictionary<Swift.String, Any>
@@ -328,28 +416,58 @@ public class StyleConstraints {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class AppData : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getPackageName() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getAgreedType() -> Swift.String?
+  #endif
   public func getPushOpened() -> Swift.Bool
   public func getAgreedAP() -> Swift.Bool
   public func getAgreedAA() -> Swift.Bool
   public func getAgreedAN() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getToken() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getAdid() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getAppName() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getAppVersion() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getDeviceOS() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getDeviceSDK() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getFirmwareName() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getScreenAct() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getScreenName() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getScreenData() -> Swift.String?
+  #endif
   public func getTerMinated() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getIosSessionDtm() -> Swift.String?
+  #endif
   public func getLatitude() -> Swift.Double
   public func getLongitude() -> Swift.Double
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getGroobeeSDK() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getCampaignKeyList() -> [GroobeeKit.PushData]?
+  #endif
   public func setPackageName(_ packageName: Swift.String) -> GroobeeKit.AppData
   public func setAgreedType(_ agreedType: Swift.String) -> GroobeeKit.AppData
   @discardableResult
@@ -381,61 +499,159 @@ public class StyleConstraints {
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class ModelBuilder {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func authServiceKey(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, packageName: Swift.String, memberId: Swift.String?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func authServiceLogin(serviceKey: Swift.String, cookieId: Swift.String, memberId: Swift.String?, userId: Swift.String?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func authPushAgreed(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, isAgreed: Swift.Bool, agreedType: Swift.String) -> GroobeeKit.RequestParams
+  #endif
   public static func authSyncMemberAgreed(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String) -> GroobeeKit.RequestParams
   public static func authPushToken(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, pushToken: Swift.String) -> GroobeeKit.RequestParams
   public static func authAppEtc(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, appName: Swift.String, appVersion: Swift.String, appOSVersion: Swift.String) -> GroobeeKit.RequestParams
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func authWebViewCookies(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, webCookieId: Swift.String, webUserId: Swift.String) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func servicePushMessage(serviceKey: Swift.String, actionCd: Swift.String, cookieId: Swift.String, userId: Swift.String, isPushOpened: Swift.Bool? = nil, campaignKeyList: [GroobeeKit.PushData], memberId: Swift.String?, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceUserInfo(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, memberData: GroobeeKit.MemberData) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceMemberJoin(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String, screenId: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceSearchKeyword(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, searchKwd: Swift.String, screenId: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceShoppingCart(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceGoodsOrder(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceGoodsOrderComplete(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, orderNo: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceGoodsOrderCancel(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, orderNo: Swift.String, goods: Swift.Array<GroobeeKit.Goods>, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceViewGoods(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, goods: GroobeeKit.Goods, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceRecommendGoods(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, campaignKey: Swift.String, recentGoodsList: [[Swift.String]]) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceCategory(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, cateCd: Swift.String, cateNm: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceCustomerData(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, customData: Foundation.NSMutableDictionary, memberData: GroobeeKit.MemberData?) -> [Swift.String : Any]
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceScreenData(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, screenName: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceCustomEvent(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, screenId: Swift.String, eventKey: Swift.String, eventValue: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceAppSessionStart(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, isTerminated: Swift.Bool, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceAppSessionEnd(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, isTerminated: Swift.Bool, iosSessionDtm: Swift.String, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func serviceAppLocation(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, memberId: Swift.String?, latitude: Swift.Double, longitude: Swift.Double, memberData: GroobeeKit.MemberData?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func statsDI(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, msgType: Swift.String, memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func statsCL(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, msgType: Swift.String, clickData: GroobeeKit.ClickData, trackingId: Swift.String? = nil, memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func statsShowRecommendGoods(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, algorithmCd: Swift.String, requestId: Swift.String, goods: [GroobeeKit.Goods], memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func statsClickRecommendGoods(serviceKey: Swift.String, cookieId: Swift.String, userId: Swift.String, campaignKey: Swift.String, algorithmCd: Swift.String, requestId: Swift.String, goods: [GroobeeKit.Goods], memberId: Swift.String? = nil) -> GroobeeKit.RequestParams
+  #endif
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class RequestParams : Swift.Codable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getServiceKey() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getCookieId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getUserId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getDeviceType() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getDeviceCd() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getOsCd() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getMemberId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getScreenId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getActionCd() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getAlgorithmCd() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getSearchKwd() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getMsgType() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getCampaignKey() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getCampaignTypeCd() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getTrackingId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getRequestId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getClickData() -> GroobeeKit.ClickData?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getOrderNo() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getAppData() -> GroobeeKit.AppData?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getMemberData() -> GroobeeKit.MemberData?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getGoods() -> Swift.Array<GroobeeKit.Goods>?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getCategory() -> GroobeeKit.CategoryData?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getRecentGoodsList() -> [[Swift.String]]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getCustomEvent() -> GroobeeKit.CustomEvent?
+  #endif
   public func setServiceKey(_ serviceKey: Swift.String) -> GroobeeKit.RequestParams
   public func setCookieId(_ cookieId: Swift.String) -> GroobeeKit.RequestParams
   @discardableResult
@@ -455,10 +671,14 @@ public class StyleConstraints {
   public func setCampaignKey(_ campaignKey: Swift.String) -> GroobeeKit.RequestParams
   @discardableResult
   public func setCampaignTypeCd(_ campaignTypeCd: Swift.String) -> GroobeeKit.RequestParams
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
   public func setTrackingId(_ trackingId: Swift.String?) -> GroobeeKit.RequestParams
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
   public func setRequestId(_ requestId: Swift.String?) -> GroobeeKit.RequestParams
+  #endif
   @discardableResult
   public func setClickData(_ clickData: GroobeeKit.ClickData) -> GroobeeKit.RequestParams
   public func setOrderNo(_ orderNo: Swift.String) -> GroobeeKit.RequestParams
@@ -489,7 +709,9 @@ public class StyleConstraints {
   @objc deinit
 }
 @objc extension Foundation.URLSession {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic open class func downloadImage(url: Foundation.URL, withCompletionHandler completionHandler: @escaping (Foundation.Data?, Foundation.NSError?) -> Swift.Void)
+  #endif
 }
 public enum StateLifeCycle {
   case DID_DIS_CONNECT
@@ -508,13 +730,21 @@ public enum StateLifeCycle {
   public var campaignKey: Swift.String?
   public var algorithmCd: Swift.String?
   public var requestId: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getRecommendList() -> [GroobeeKit.Goods]?
+  #endif
   @objc public func setRecommendList(_ recommendList: [GroobeeKit.Goods])
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getCampaignKey() -> Swift.String?
+  #endif
   @objc public func setCampaignKey(_ campaignKey: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getAlgorithmCd() -> Swift.String?
+  #endif
   @objc public func setAlgorithmCd(_ algorithmCd: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getRequestId() -> Swift.String?
+  #endif
   @objc public func setRequestId(_ requestId: Swift.String)
   @objc override dynamic public init()
   @objc deinit
@@ -532,7 +762,9 @@ public struct MessageButton : Swift.Codable {
 @_hasMissingDesignatedInitializers @available(iOS 10.0, *)
 public class InAppMessageDisplay {
   public static func getInstance() -> GroobeeKit.InAppMessageDisplay
+  #if compiler(>=5.3) && $NonescapableTypes
   public func setClickEvent(detect: GroobeeKit.DetectClickedButton? = nil)
+  #endif
   public func isShowing() -> Swift.Bool
   public func dismissMessage()
   public func show(inAppMessage: GroobeeKit.InAppMessageModel, campaignKey: Swift.String, msgType: Swift.String)
